@@ -52,13 +52,15 @@ go run ./cmd/compare -base results/onnx_cpu.json -candidate results/runtime_cpu.
 For CUDA-capable systems, the following commands should be used:
 
 \begin{verbatim}
-./scripts/gpu_smoke.sh
+python scripts/gpu_smoke.py
 python3 scripts/pytorch_bench.py --device cuda --output results/pytorch_cuda.json
 python3 scripts/onnx_bench.py --device cuda --output results/onnx_cuda.json
 go run ./cmd/compare -base results/pytorch_cuda.json -candidate results/runtime_cuda.json -base-name pytorch -candidate-name runtime
 go run ./cmd/compare -base results/onnx_cuda.json -candidate results/runtime_cuda.json -base-name onnx -candidate-name runtime
 go run -tags cuda ./cmd/demo -cost-model measured -cpu-results results/runtime_cpu.json -cuda-results results/runtime_cuda.json
 \end{verbatim}
+
+The Python runner is the cross-platform execution path used for evaluation.
 
 The default benchmark sizes in this repository are suitable for prototype evaluation, but a formal report should state explicitly which sizes were used and why they were chosen. If the study claims improved performance for small or medium workloads, then the size range must be broad enough to expose the crossover point between CPU and GPU execution.
 

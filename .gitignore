@@ -1,5 +1,8 @@
 cuda/libcudatensor.a
 cuda/*.o
-results/
+cuda/cudatensor.dll
+cuda/cudatensor.exp
+cuda/cudatensor.lib
+*.json
 __pycache__/
 *.pyc

@@ -43,7 +43,7 @@ go run ./cmd/compare -base results/onnx_cpu.json -candidate results/runtime_cpu.
 For CUDA-capable systems, the following commands should be used:
 
 ```bash
-./scripts/gpu_smoke.sh
+python scripts/gpu_smoke.py
 python3 scripts/pytorch_bench.py --device cuda --output results/pytorch_cuda.json
 python3 scripts/onnx_bench.py --device cuda --output results/onnx_cuda.json
 go run ./cmd/compare -base results/pytorch_cuda.json -candidate results/runtime_cuda.json -base-name pytorch -candidate-name runtime

@@ -3,6 +3,7 @@ import argparse
 import json
 import sys
 import time
+from importlib.util import find_spec
 
 
 def parse_csv(raw):
@@ -77,7 +78,9 @@ def result(name, size, device, iterations, total_ms):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Emit PyTorch benchmark results in the runtime JSON schema.")
+    parser = argparse.ArgumentParser(
+        description="Emit PyTorch benchmark results in the runtime JSON schema."
+    )
     parser.add_argument("--workloads", default="add,matmul,compiled_graph")
     parser.add_argument("--sizes", default="64,128,256")
     parser.add_argument("--iters", type=int, default=20)
@@ -85,14 +88,26 @@ def main():
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
-    try:
-        import torch
-    except ImportError:
-        print("PyTorch is not installed. Install torch first.", file=sys.stderr)
+    missing = [name for name in ("torch",) if find_spec(name) is None]
+    if missing:
+        print(
+            "Missing required Python packages: {}. Install them in the active environment first.".format(
+                ", ".join(missing)
+            ),
+            file=sys.stderr,
+        )
         sys.exit(1)
 
+    import torch
+
     if args.device == "cuda" and not torch.cuda.is_available():
-        print("CUDA requested but PyTorch cannot see a CUDA device.", file=sys.stderr)
+        device_count = (
+            torch.cuda.device_count() if hasattr(torch.cuda, "device_count") else 0
+        )
+        print(
+            f"CUDA requested but PyTorch cannot see a CUDA device. device_count={device_count}",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     workloads = parse_csv(args.workloads)
@@ -109,7 +124,9 @@ def main():
             elif workload == "matmul":
                 results.append(benchmark_matmul(torch, size, args.device, args.iters))
             elif workload == "compiled_graph":
-                results.append(benchmark_compiled_graph(torch, size, args.device, args.iters))
+                results.append(
+                    benchmark_compiled_graph(torch, size, args.device, args.iters)
+                )
             else:
                 print(f"unsupported workload: {workload}", file=sys.stderr)
                 sys.exit(1)

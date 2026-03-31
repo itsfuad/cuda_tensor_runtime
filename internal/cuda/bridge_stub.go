@@ -1,4 +1,4 @@
-//go:build !cuda || !cgo
+//go:build !cuda || (!windows && !cgo)
 
 package cuda
 

@@ -3,6 +3,7 @@ import argparse
 import json
 import sys
 import time
+from importlib.util import find_spec
 
 
 def parse_csv(raw):
@@ -105,19 +106,31 @@ def main():
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
-    try:
-        import numpy as np
-        import onnx
-        import onnxruntime as ort
-    except ImportError:
-        print("ONNX, ONNX Runtime, and NumPy must be installed first.", file=sys.stderr)
+    missing = [name for name in ("numpy", "onnx", "onnxruntime") if find_spec(name) is None]
+    if missing:
+        print(
+            "Missing required Python packages: {}. Install them in the active environment first.".format(
+                ", ".join(missing)
+            ),
+            file=sys.stderr,
+        )
         sys.exit(1)
+
+    import numpy as np
+    import onnx
+    import onnxruntime as ort
 
     provider = "CPUExecutionProvider"
     if args.device == "cuda":
         provider = "CUDAExecutionProvider"
-        if provider not in ort.get_available_providers():
-            print("CUDAExecutionProvider is unavailable in this ONNX Runtime install.", file=sys.stderr)
+        available_providers = ort.get_available_providers()
+        if provider not in available_providers:
+            print(
+                "CUDAExecutionProvider is unavailable. Available providers: {}".format(
+                    ", ".join(available_providers) if available_providers else "<none>"
+                ),
+                file=sys.stderr,
+            )
             sys.exit(1)
 
     if args.iters <= 0:
