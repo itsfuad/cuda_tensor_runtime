@@ -34,6 +34,7 @@ func main() {
 	sizesFlag := flag.String("sizes", "64,128,256", "comma-separated sizes")
 	itersFlag := flag.Int("iters", 10, "iterations per workload")
 	formatFlag := flag.String("format", "text", "output format: text or json")
+	outputFlag := flag.String("output", "", "optional file path for JSON results")
 	cudaFlag := flag.Bool("cuda", false, "force CUDA dispatch")
 	flag.Parse()
 
@@ -82,6 +83,12 @@ func main() {
 		}
 	default:
 		log.Fatalf("unsupported format %q", *formatFlag)
+	}
+
+	if *outputFlag != "" {
+		if err := writeResults(*outputFlag, results); err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 
@@ -146,6 +153,18 @@ func printText(results []benchResult) {
 		fmt.Printf("%-16s %-8d %-8s %-12d %-12.3f %-12.3f\n",
 			result.Name, result.Size, result.Device, result.Iterations, result.TotalMs, result.AvgMs)
 	}
+}
+
+func writeResults(path string, results []benchResult) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	enc := json.NewEncoder(f)
+	enc.SetIndent("", "  ")
+	return enc.Encode(results)
 }
 
 func parseList(raw string) []string {

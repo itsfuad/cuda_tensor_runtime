@@ -57,6 +57,14 @@ For repeatable latency summaries outside `go test`, use the benchmark runner:
 go run ./cmd/bench -workloads add,matmul,compiled_graph -sizes 64,128 -iters 20
 go run ./cmd/bench -format json -workloads compiled_graph -sizes 128
 go run -tags cuda ./cmd/bench -cuda -workloads matmul -sizes 128,256
+go run ./cmd/bench -format json -output results/runtime_cpu.json -sizes 64,128 -iters 20
+```
+
+Compare this runtime against an external baseline JSON file that uses the same schema:
+
+```bash
+go run ./cmd/compare -base results/pytorch_cpu.json -candidate results/runtime_cpu.json -base-name pytorch -candidate-name runtime
+go run ./cmd/compare -format json -base results/onnx_cpu.json -candidate results/runtime_cpu.json
 ```
 
 ## Notes
