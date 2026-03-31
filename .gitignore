@@ -1,2 +1,5 @@
 cuda/libcudatensor.a
 cuda/*.o
+results/
+__pycache__/
+*.pyc

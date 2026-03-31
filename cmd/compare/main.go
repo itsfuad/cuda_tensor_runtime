@@ -1,23 +1,17 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
 	"math"
-	"os"
 	"sort"
-)
 
-type benchResult struct {
-	Name       string  `json:"name"`
-	Size       int     `json:"size"`
-	Device     string  `json:"device"`
-	Iterations int     `json:"iterations"`
-	TotalMs    float64 `json:"total_ms"`
-	AvgMs      float64 `json:"avg_ms"`
-}
+	"encoding/json"
+	"os"
+
+	"github.com/itsfuad/cuda_tensor_runtime/internal/benchfmt"
+)
 
 type comparisonRow struct {
 	Name           string
@@ -40,11 +34,11 @@ func main() {
 		log.Fatal("both -base and -candidate are required")
 	}
 
-	baseResults, err := readResults(*baseFlag)
+	baseResults, err := benchfmt.ReadFile(*baseFlag)
 	if err != nil {
 		log.Fatal(err)
 	}
-	candidateResults, err := readResults(*candidateFlag)
+	candidateResults, err := benchfmt.ReadFile(*candidateFlag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -66,22 +60,8 @@ func main() {
 	}
 }
 
-func readResults(path string) ([]benchResult, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
-
-	var results []benchResult
-	if err := json.NewDecoder(f).Decode(&results); err != nil {
-		return nil, err
-	}
-	return results, nil
-}
-
-func compare(baseResults, candidateResults []benchResult) ([]comparisonRow, error) {
-	baseIndex := make(map[string]benchResult, len(baseResults))
+func compare(baseResults, candidateResults []benchfmt.Result) ([]comparisonRow, error) {
+	baseIndex := make(map[string]benchfmt.Result, len(baseResults))
 	for _, result := range baseResults {
 		baseIndex[key(result)] = result
 	}
@@ -118,7 +98,7 @@ func compare(baseResults, candidateResults []benchResult) ([]comparisonRow, erro
 	return rows, nil
 }
 
-func key(result benchResult) string {
+func key(result benchfmt.Result) string {
 	return fmt.Sprintf("%s|%d|%s", result.Name, result.Size, result.Device)
 }
 

@@ -9,6 +9,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/itsfuad/cuda_tensor_runtime/internal/benchfmt"
 	"github.com/itsfuad/cuda_tensor_runtime/tensor"
 )
 
@@ -18,15 +19,6 @@ type fixedCostModel struct {
 
 func (m fixedCostModel) ShouldUseCUDA(op tensor.OpKind, work int) bool {
 	return m.useCUDA
-}
-
-type benchResult struct {
-	Name       string  `json:"name"`
-	Size       int     `json:"size"`
-	Device     string  `json:"device"`
-	Iterations int     `json:"iterations"`
-	TotalMs    float64 `json:"total_ms"`
-	AvgMs      float64 `json:"avg_ms"`
 }
 
 func main() {
@@ -63,7 +55,7 @@ func main() {
 		device = "cuda"
 	}
 
-	var results []benchResult
+	var results []benchfmt.Result
 	for _, workload := range workloads {
 		for _, size := range sizes {
 			result, err := runWorkload(workload, size, *itersFlag, device)
@@ -78,21 +70,19 @@ func main() {
 	case "text":
 		printText(results)
 	case "json":
-		if err := json.NewEncoder(os.Stdout).Encode(results); err != nil {
-			log.Fatal(err)
-		}
+		printJSON(results)
 	default:
 		log.Fatalf("unsupported format %q", *formatFlag)
 	}
 
 	if *outputFlag != "" {
-		if err := writeResults(*outputFlag, results); err != nil {
+		if err := benchfmt.WriteFile(*outputFlag, results); err != nil {
 			log.Fatal(err)
 		}
 	}
 }
 
-func runWorkload(workload string, size, iterations int, device string) (benchResult, error) {
+func runWorkload(workload string, size, iterations int, device string) (benchfmt.Result, error) {
 	switch workload {
 	case "add":
 		a := benchmarkTensor([]int{size})
@@ -114,7 +104,7 @@ func runWorkload(workload string, size, iterations int, device string) (benchRes
 		bias := tensor.NewConst(benchmarkTensor([]int{size, size}))
 		prog, err := tensor.Compile(tensor.ReLUNode(tensor.AddNode(tensor.MatMulNode(x, w), bias)))
 		if err != nil {
-			return benchResult{}, err
+			return benchfmt.Result{}, err
 		}
 		inputs := map[string]*tensor.Tensor{
 			"x": benchmarkTensor([]int{size, size}),
@@ -125,19 +115,19 @@ func runWorkload(workload string, size, iterations int, device string) (benchRes
 			return err
 		})
 	default:
-		return benchResult{}, fmt.Errorf("unsupported workload %q", workload)
+		return benchfmt.Result{}, fmt.Errorf("unsupported workload %q", workload)
 	}
 }
 
-func measure(name string, size int, device string, iterations int, fn func() error) (benchResult, error) {
+func measure(name string, size int, device string, iterations int, fn func() error) (benchfmt.Result, error) {
 	start := time.Now()
 	for i := 0; i < iterations; i++ {
 		if err := fn(); err != nil {
-			return benchResult{}, err
+			return benchfmt.Result{}, err
 		}
 	}
 	total := time.Since(start)
-	return benchResult{
+	return benchfmt.Result{
 		Name:       name,
 		Size:       size,
 		Device:     device,
@@ -147,7 +137,7 @@ func measure(name string, size int, device string, iterations int, fn func() err
 	}, nil
 }
 
-func printText(results []benchResult) {
+func printText(results []benchfmt.Result) {
 	fmt.Printf("%-16s %-8s %-8s %-12s %-12s %-12s\n", "workload", "size", "device", "iterations", "total_ms", "avg_ms")
 	for _, result := range results {
 		fmt.Printf("%-16s %-8d %-8s %-12d %-12.3f %-12.3f\n",
@@ -155,16 +145,10 @@ func printText(results []benchResult) {
 	}
 }
 
-func writeResults(path string, results []benchResult) error {
-	f, err := os.Create(path)
-	if err != nil {
-		return err
+func printJSON(results []benchfmt.Result) {
+	if err := json.NewEncoder(os.Stdout).Encode(results); err != nil {
+		log.Fatal(err)
 	}
-	defer f.Close()
-
-	enc := json.NewEncoder(f)
-	enc.SetIndent("", "  ")
-	return enc.Encode(results)
 }
 
 func parseList(raw string) []string {

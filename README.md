@@ -34,6 +34,12 @@ cd ..
 go run -tags cuda ./cmd/demo
 ```
 
+You can also load a measured cost model derived from benchmark JSON:
+
+```bash
+go run -tags cuda ./cmd/demo -cost-model measured -cpu-results results/runtime_cpu.json -cuda-results results/runtime_cuda.json
+```
+
 ## Benchmarks
 
 Run the CPU benchmark suite:
@@ -67,9 +73,28 @@ go run ./cmd/compare -base results/pytorch_cpu.json -candidate results/runtime_c
 go run ./cmd/compare -format json -base results/onnx_cpu.json -candidate results/runtime_cpu.json
 ```
 
+Generate external baseline files with the helper scripts:
+
+```bash
+python3 scripts/pytorch_bench.py --device cpu --output results/pytorch_cpu.json
+python3 scripts/onnx_bench.py --device cpu --output results/onnx_cpu.json
+python3 scripts/pytorch_bench.py --device cuda --output results/pytorch_cuda.json
+python3 scripts/onnx_bench.py --device cuda --output results/onnx_cuda.json
+```
+
+## GPU Machine Workflow
+
+On a CUDA machine, the full smoke path is:
+
+```bash
+./scripts/gpu_smoke.sh
+```
+
+That script builds the CUDA library, runs tagged tests, runs the demo, executes benchmarks, and writes `results/runtime_cpu.json` and `results/runtime_cuda.json`.
+
 ## Notes
 
 - The CUDA matmul kernel is a shared-memory tiled kernel.
 - It is a baseline kernel, not a cuBLAS replacement.
-- The default planner uses a threshold cost model; it can now be swapped for a measured cost model for research use.
+- The default planner uses a threshold cost model; it can also load a measured threshold model derived from CPU and CUDA benchmark JSON.
 - CUDA runtime libraries and NVIDIA drivers must be installed on the target machine.
