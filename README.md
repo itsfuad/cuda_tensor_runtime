@@ -25,6 +25,15 @@ This builds `libcudatensor.a`, which the Go bridge links through cgo.
 go run ./cmd/demo
 ```
 
+This runs with CPU fallback by default. To enable the CUDA bridge, first build the static library and then use the `cuda` build tag:
+
+```bash
+cd cuda
+make
+cd ..
+go run -tags cuda ./cmd/demo
+```
+
 ## Notes
 
 - The CUDA matmul kernel is a shared-memory tiled kernel.
