@@ -27,6 +27,19 @@ func TestCompileInfersOutputShape(t *testing.T) {
 	}
 }
 
+func TestCompileFusesAddReLU(t *testing.T) {
+	x := NewInput("x", []int{4}, DeviceCPU)
+	y := NewInput("y", []int{4}, DeviceCPU)
+
+	prog, err := Compile(ReLUNode(AddNode(x, y)))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := prog.root.(*AddReLUExpr); !ok {
+		t.Fatalf("compiled root = %T, want *AddReLUExpr", prog.root)
+	}
+}
+
 func TestCompileRejectsShapeMismatch(t *testing.T) {
 	x := NewInput("x", []int{2, 3}, DeviceCPU)
 	y := NewInput("y", []int{4, 3}, DeviceCPU)

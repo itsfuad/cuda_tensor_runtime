@@ -37,6 +37,11 @@ type AddExpr struct {
 	Right Expr
 }
 
+type AddReLUExpr struct {
+	Left  Expr
+	Right Expr
+}
+
 type ReLUExpr struct {
 	Input Expr
 }
@@ -82,6 +87,7 @@ func Compile(root Expr) (*Program, error) {
 	if root == nil {
 		return nil, fmt.Errorf("root expression cannot be nil")
 	}
+	root = optimizeExpr(root)
 	state := &inferState{types: make(map[Expr]TensorType)}
 	if _, err := root.infer(state); err != nil {
 		return nil, err
@@ -192,6 +198,38 @@ func (e *AddExpr) eval(inputs map[string]*Tensor) (*Tensor, error) {
 	return Add(left, right)
 }
 
+func (e *AddReLUExpr) infer(state *inferState) (TensorType, error) {
+	left, err := e.Left.infer(state)
+	if err != nil {
+		return TensorType{}, err
+	}
+	right, err := e.Right.infer(state)
+	if err != nil {
+		return TensorType{}, err
+	}
+	if !sameShape(left.Shape, right.Shape) {
+		return TensorType{}, fmt.Errorf("addrelu shape mismatch: %v vs %v", left.Shape, right.Shape)
+	}
+	if left.DType != right.DType {
+		return TensorType{}, fmt.Errorf("addrelu dtype mismatch: %s vs %s", left.DType, right.DType)
+	}
+	typ := TensorType{Shape: cloneInts(left.Shape), DType: left.DType, Device: left.Device}
+	state.types[e] = typ
+	return typ, nil
+}
+
+func (e *AddReLUExpr) eval(inputs map[string]*Tensor) (*Tensor, error) {
+	left, err := e.Left.eval(inputs)
+	if err != nil {
+		return nil, err
+	}
+	right, err := e.Right.eval(inputs)
+	if err != nil {
+		return nil, err
+	}
+	return AddReLU(left, right)
+}
+
 func (e *ReLUExpr) infer(state *inferState) (TensorType, error) {
 	input, err := e.Input.infer(state)
 	if err != nil {
@@ -277,4 +315,32 @@ func validateTensorMatchesType(t *Tensor, typ TensorType) error {
 		return fmt.Errorf("device mismatch: got=%s want=%s", t.Device, typ.Device)
 	}
 	return nil
+}
+
+func optimizeExpr(expr Expr) Expr {
+	switch e := expr.(type) {
+	case *AddExpr:
+		return &AddExpr{
+			Left:  optimizeExpr(e.Left),
+			Right: optimizeExpr(e.Right),
+		}
+	case *ReLUExpr:
+		input := optimizeExpr(e.Input)
+		if add, ok := input.(*AddExpr); ok {
+			return &AddReLUExpr{
+				Left:  add.Left,
+				Right: add.Right,
+			}
+		}
+		return &ReLUExpr{Input: input}
+	case *MatMulExpr:
+		return &MatMulExpr{
+			Left:  optimizeExpr(e.Left),
+			Right: optimizeExpr(e.Right),
+		}
+	case *ConstExpr, *InputExpr, *AddReLUExpr:
+		return expr
+	default:
+		return expr
+	}
 }
