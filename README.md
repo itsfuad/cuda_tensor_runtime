@@ -34,6 +34,23 @@ cd ..
 go run -tags cuda ./cmd/demo
 ```
 
+## Benchmarks
+
+Run the CPU benchmark suite:
+
+```bash
+go test -run ^$ -bench . -benchmem ./tensor
+```
+
+Run the optional CUDA benchmarks after building the CUDA library:
+
+```bash
+cd cuda
+make
+cd ..
+go test -tags cuda -run ^$ -bench 'CUDA|CompiledGraph|CPU' -benchmem ./tensor
+```
+
 ## Notes
 
 - The CUDA matmul kernel is a shared-memory tiled kernel.
