@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{Evaluation Protocol}
+
+\subsection{Evaluation Methodology}
+
+This project is evaluated along three primary dimensions: correctness, runtime performance, and execution-planning quality. The objective is to determine whether the proposed lightweight compiler-assisted tensor runtime reduces execution overhead while providing effective hybrid CPU--GPU execution for selected tensor workloads.
+
+Correctness evaluation establishes that the runtime, compiler layer, and backend integrations produce valid outputs across supported operations. This includes eager tensor execution, compiled graph execution, CPU execution, and CUDA execution where hardware is available. The purpose of this stage is to ensure that any performance claim is grounded in semantically correct behavior.
+
+Performance evaluation measures latency and memory overhead for the runtime's supported workloads and compares those results against external baselines. The main workloads considered in this project are elementwise addition, matrix multiplication, and a compiled graph consisting of matrix multiplication followed by addition and ReLU. These workloads were selected because they cover both simple elementwise execution and a small fused computation pipeline.
+
+Execution-planning evaluation measures whether the runtime's CPU--GPU dispatch policy selects the empirically better backend at appropriate workload sizes. This is especially important because the central claim of the project is not only that CPU and GPU backends exist, but that the runtime can make reasonable hybrid execution decisions based on workload characteristics.
+
+All comparisons must be performed using the same tensor sizes, iteration counts, and machine configuration for all systems under test. This is necessary to ensure that observed differences are due to runtime behavior rather than mismatched experimental conditions.
+
+\subsection{Experimental Setup}
+
+Experiments should be conducted on a clearly documented hardware and software environment. At minimum, the report should record the CPU model, number of cores, installed memory, GPU model, GPU driver version, CUDA toolkit version, operating system version, Go version, Python version, PyTorch version, and ONNX Runtime version. If experiments are run on multiple machines, CPU and GPU results must not be compared across machines unless that distinction is made explicit.
+
+The project should first be validated through its internal test suite. This confirms that the tensor runtime, compiler passes, planner logic, and measured cost model function correctly before performance results are collected. On CPU-only systems, only the default test suite can be executed. On CUDA-capable systems, both the default and CUDA-tagged test suites should be run.
+
+The experimental workflow should proceed in the following order:
+\begin{enumerate}
+    \item Run the Go test suite to verify correctness.
+    \item Execute internal Go benchmarks for eager and compiled workloads.
+    \item Export runtime benchmark results as JSON files.
+    \item Generate external baseline result files using PyTorch and ONNX Runtime.
+    \item Compare exported results using the repository's comparison tool.
+    \item Derive and validate the measured planner using CPU and CUDA result files.
+\end{enumerate}
+
+For CPU-only validation, the following commands should be used:
+
+\begin{verbatim}
+go test ./...
+go test -run '^$' -bench . -benchmem ./tensor
+mkdir -p results
+go run ./cmd/bench -format json -output results/runtime_cpu.json -workloads add,matmul,compiled_graph -sizes 64,128,256 -iters 20
+python3 scripts/pytorch_bench.py --device cpu --output results/pytorch_cpu.json
+python3 scripts/onnx_bench.py --device cpu --output results/onnx_cpu.json
+go run ./cmd/compare -base results/pytorch_cpu.json -candidate results/runtime_cpu.json -base-name pytorch -candidate-name runtime
+go run ./cmd/compare -base results/onnx_cpu.json -candidate results/runtime_cpu.json -base-name onnx -candidate-name runtime
+\end{verbatim}
+
+For CUDA-capable systems, the following commands should be used:
+
+\begin{verbatim}
+./scripts/gpu_smoke.sh
+python3 scripts/pytorch_bench.py --device cuda --output results/pytorch_cuda.json
+python3 scripts/onnx_bench.py --device cuda --output results/onnx_cuda.json
+go run ./cmd/compare -base results/pytorch_cuda.json -candidate results/runtime_cuda.json -base-name pytorch -candidate-name runtime
+go run ./cmd/compare -base results/onnx_cuda.json -candidate results/runtime_cuda.json -base-name onnx -candidate-name runtime
+go run -tags cuda ./cmd/demo -cost-model measured -cpu-results results/runtime_cpu.json -cuda-results results/runtime_cuda.json
+\end{verbatim}
+
+The default benchmark sizes in this repository are suitable for prototype evaluation, but a formal report should state explicitly which sizes were used and why they were chosen. If the study claims improved performance for small or medium workloads, then the size range must be broad enough to expose the crossover point between CPU and GPU execution.
+
+\subsection{Metrics}
+
+The main reported metric is average latency in milliseconds. For internal Go benchmarks, memory allocation statistics should also be reported because they help characterize runtime overhead. Where repeated trials are available, the mean and variance should be included to show measurement stability.
+
+Speedup should be reported using the following definition:
+\[
+\text{speedup} = \frac{\text{baseline average latency}}{\text{runtime average latency}}
+\]
+
+A speedup greater than 1.0 indicates that the proposed runtime is faster than the baseline for the measured workload. A speedup less than 1.0 indicates that the baseline is faster.
+
+The planner should be evaluated by comparing its selected execution backend against the empirically faster backend for each workload size. The result of this analysis should be reported as qualitative agreement or disagreement between measured crossover behavior and planner decisions.
+
+\subsection{Ablation Study}
+
+To isolate the contribution of individual design decisions, the evaluation should include at least the following ablations:
+\begin{enumerate}
+    \item CPU-only runtime execution.
+    \item Hybrid execution with the default threshold planner.
+    \item Hybrid execution with the measured planner.
+    \item Eager execution of supported operations.
+    \item Compiled graph execution using the repository's compiler layer.
+    \item Runtime comparison against PyTorch.
+    \item Runtime comparison against ONNX Runtime.
+\end{enumerate}
+
+These ablations help distinguish whether observed gains come from the runtime implementation itself, the hybrid execution policy, or the compiler-assisted execution path.
+
+\subsection{Results Discussion Template}
+
+The results discussion should be structured around the core claims of the project.
+
+First, correctness results should be summarized briefly. The report should state whether all internal tests passed, whether CUDA-tagged tests passed on a GPU machine, and whether benchmark outputs matched expected behavior for all evaluated workloads.
+
+Second, performance results should be discussed by workload category. For elementwise addition, the discussion should focus on whether the runtime achieves lower control overhead on small tensor sizes. For matrix multiplication, the discussion should identify the size range at which GPU execution begins to outperform CPU execution. For compiled graph execution, the discussion should assess whether the compiler-assisted path provides benefits over eager execution or, at minimum, avoids introducing additional overhead.
+
+Third, planner behavior should be discussed in terms of crossover quality. The report should state whether the measured cost model selects GPU execution near the observed crossover points and whether the default threshold model overestimates or underestimates the point at which GPU execution becomes advantageous.
+
+Finally, the discussion should explicitly acknowledge limitations. At present, the system supports a limited set of operations, uses a prototype CUDA backend, and implements fusion only partially at the backend level. Therefore, conclusions should be framed as evidence for the feasibility of a lightweight compiler-assisted tensor runtime rather than as a claim of broad superiority over production frameworks across all workloads.
+
+\subsection{Threats to Validity}
+
+Several threats to validity must be acknowledged.
+
+First, the workload set is narrow and may not represent broader machine learning or scientific computing applications. Second, performance behavior is hardware-dependent, especially for GPU crossover points. Third, baseline frameworks may benefit from implementation techniques not present in this prototype, such as advanced kernel libraries, graph scheduling, memory planning, and asynchronous execution. Fourth, if repeated measurements are limited, performance variance may be underreported.
+
+These limitations do not invalidate the study, but they constrain the scope of the conclusions. The strongest defensible claim is that the project demonstrates a working prototype of compiler-runtime co-design with measurable overhead and execution-planning behavior on selected workloads.
+
+\subsection{Conclusion}
+
+This evaluation protocol provides a reproducible process for verifying the project's central claims. By combining correctness testing, benchmark export, external baseline comparison, and planner validation, the protocol supports a disciplined assessment of whether the runtime achieves meaningful low-overhead execution and sensible hybrid CPU--GPU behavior. The resulting evidence can be used to support the thesis that a lightweight compiler-assisted tensor runtime is a viable alternative for selected workload ranges, while also making clear the prototype nature and current limits of the implementation.
+
+\end{document}
