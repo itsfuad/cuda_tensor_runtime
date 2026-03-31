@@ -51,6 +51,14 @@ cd ..
 go test -tags cuda -run ^$ -bench 'CUDA|CompiledGraph|CPU' -benchmem ./tensor
 ```
 
+For repeatable latency summaries outside `go test`, use the benchmark runner:
+
+```bash
+go run ./cmd/bench -workloads add,matmul,compiled_graph -sizes 64,128 -iters 20
+go run ./cmd/bench -format json -workloads compiled_graph -sizes 128
+go run -tags cuda ./cmd/bench -cuda -workloads matmul -sizes 128,256
+```
+
 ## Notes
 
 - The CUDA matmul kernel is a shared-memory tiled kernel.
