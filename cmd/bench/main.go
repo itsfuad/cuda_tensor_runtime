@@ -21,6 +21,9 @@ func (m fixedCostModel) ShouldUseCUDA(op tensor.OpKind, work int) bool {
 	return m.useCUDA
 }
 
+func (m fixedCostModel) Observe(op tensor.OpKind, work int, backend tensor.ExecBackend, elapsed time.Duration) {
+}
+
 func main() {
 	workloadsFlag := flag.String("workloads", "add,matmul,compiled_graph", "comma-separated workloads: add,matmul,compiled_graph")
 	sizesFlag := flag.String("sizes", "64,128,256", "comma-separated sizes")

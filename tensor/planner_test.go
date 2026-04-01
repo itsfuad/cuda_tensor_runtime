@@ -1,6 +1,9 @@
 package tensor
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 type recordingCostModel struct {
 	lastOp   OpKind
@@ -12,6 +15,9 @@ func (m *recordingCostModel) ShouldUseCUDA(op OpKind, work int) bool {
 	m.lastOp = op
 	m.lastWork = work
 	return m.useCUDA
+}
+
+func (m *recordingCostModel) Observe(op OpKind, work int, backend ExecBackend, elapsed time.Duration) {
 }
 
 func TestThresholdCostModelPreservesThresholdBehavior(t *testing.T) {
@@ -91,5 +97,42 @@ func TestMatMulUsesConfiguredCostModel(t *testing.T) {
 	}
 	if model.lastWork != 12 {
 		t.Fatalf("lastWork = %d, want 12", model.lastWork)
+	}
+}
+
+func TestAdaptiveCostModelLearnsPreferredBackend(t *testing.T) {
+	model := NewAdaptiveCostModel(ThresholdCostModel{CUDAThreshold: 1024}, 1, 0)
+
+	if model.ShouldUseCUDA(OpAdd, 64) {
+		t.Fatal("ShouldUseCUDA() = true before observations, want false from fallback")
+	}
+
+	model.Observe(OpAdd, 64, BackendCPU, 4*time.Millisecond)
+	if !model.ShouldUseCUDA(OpAdd, 64) {
+		t.Fatal("ShouldUseCUDA() = false after only CPU sample, want true to explore CUDA")
+	}
+
+	model.Observe(OpAdd, 64, BackendCUDA, 1*time.Millisecond)
+	if !model.ShouldUseCUDA(OpAdd, 64) {
+		t.Fatal("ShouldUseCUDA() = false after faster CUDA sample, want true")
+	}
+
+	model.Observe(OpAdd, 64, BackendCUDA, 5*time.Millisecond)
+	model.Observe(OpAdd, 64, BackendCPU, 1*time.Millisecond)
+	if model.ShouldUseCUDA(OpAdd, 64) {
+		t.Fatal("ShouldUseCUDA() = true after CPU becomes faster on average, want false")
+	}
+}
+
+func TestAdaptiveCostModelExploresPeriodically(t *testing.T) {
+	model := NewAdaptiveCostModel(ThresholdCostModel{CUDAThreshold: 1}, 1, 2)
+	model.Observe(OpAdd, 128, BackendCPU, 4*time.Millisecond)
+	model.Observe(OpAdd, 128, BackendCUDA, 1*time.Millisecond)
+
+	if !model.ShouldUseCUDA(OpAdd, 128) {
+		t.Fatal("first decision = false, want true for faster CUDA")
+	}
+	if model.ShouldUseCUDA(OpAdd, 128) {
+		t.Fatal("second decision = true, want false due to exploration")
 	}
 }

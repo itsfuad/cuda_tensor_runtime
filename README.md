@@ -20,7 +20,7 @@ A small Go tensor runtime with a CUDA backend via cgo.
 - float32 dense tensors
 - CPU ops: add, relu, matmul
 - CUDA ops: add, relu, tiled matmul
-- configurable CPU/GPU execution planner with default threshold model
+- configurable CPU/GPU execution planner with threshold, measured, and adaptive modes
 - demo program
 
 ## Build CUDA static library
@@ -59,6 +59,12 @@ You can also load a measured cost model derived from benchmark JSON:
 
 ```bash
 go run -tags cuda ./cmd/demo -cost-model measured -cpu-results results/runtime_cpu.json -cuda-results results/runtime_cuda.json
+```
+
+Or run with the online adaptive planner, which learns backend preferences from observed execution time:
+
+```bash
+go run -tags cuda ./cmd/demo -cost-model adaptive
 ```
 
 ## Benchmarks
@@ -124,5 +130,5 @@ That runner builds the required CUDA artifact for the current platform, runs tag
 
 - The CUDA matmul kernel is a shared-memory tiled kernel.
 - It is a baseline kernel, not a cuBLAS replacement.
-- The default planner uses a threshold cost model; it can also load a measured threshold model derived from CPU and CUDA benchmark JSON.
+- The planner supports static threshold, measured threshold, and online adaptive modes.
 - CUDA runtime libraries and NVIDIA drivers must be installed on the target machine.

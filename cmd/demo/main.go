@@ -9,12 +9,13 @@ import (
 )
 
 func main() {
-	costModelFlag := flag.String("cost-model", "default", "cost model: default or measured")
+	costModelFlag := flag.String("cost-model", "default", "cost model: default, measured, or adaptive")
 	cpuResultsFlag := flag.String("cpu-results", "", "CPU benchmark JSON for measured cost model")
 	cudaResultsFlag := flag.String("cuda-results", "", "CUDA benchmark JSON for measured cost model")
 	flag.Parse()
 
-	if *costModelFlag == "measured" {
+	switch *costModelFlag {
+	case "measured":
 		if *cpuResultsFlag == "" || *cudaResultsFlag == "" {
 			log.Fatal("measured cost model requires -cpu-results and -cuda-results")
 		}
@@ -24,8 +25,13 @@ func main() {
 		}
 		tensor.SetCostModel(model)
 		fmt.Println("cost model: measured")
-	} else {
+	case "adaptive":
+		tensor.SetCostModel(tensor.NewAdaptiveCostModel(tensor.CurrentCostModel(), 2, 8))
+		fmt.Println("cost model: adaptive")
+	case "default":
 		fmt.Println("cost model: default")
+	default:
+		log.Fatalf("unsupported cost model %q", *costModelFlag)
 	}
 
 	fmt.Println("CUDA available:", tensor.CUDAAvailable())

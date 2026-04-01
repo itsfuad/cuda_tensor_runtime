@@ -3,6 +3,7 @@ package tensor
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
 type fixedCostModel struct {
@@ -12,6 +13,8 @@ type fixedCostModel struct {
 func (m fixedCostModel) ShouldUseCUDA(op OpKind, work int) bool {
 	return m.useCUDA
 }
+
+func (m fixedCostModel) Observe(op OpKind, work int, backend ExecBackend, elapsed time.Duration) {}
 
 func benchmarkTensor(shape []int) *Tensor {
 	n, err := numel(shape)

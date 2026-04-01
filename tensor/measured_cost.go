@@ -3,6 +3,7 @@ package tensor
 import (
 	"fmt"
 	"sort"
+	"time"
 
 	"github.com/itsfuad/cuda_tensor_runtime/internal/benchfmt"
 )
@@ -21,6 +22,8 @@ func (m MeasuredCostModel) ShouldUseCUDA(op OpKind, work int) bool {
 	}
 	return ThresholdCostModel{CUDAThreshold: defaultCUDAThreshold}.ShouldUseCUDA(op, work)
 }
+
+func (m MeasuredCostModel) Observe(op OpKind, work int, backend ExecBackend, elapsed time.Duration) {}
 
 func LoadMeasuredCostModel(cpuResultsPath, cudaResultsPath string) (MeasuredCostModel, error) {
 	cpuResults, err := benchfmt.ReadFile(cpuResultsPath)
