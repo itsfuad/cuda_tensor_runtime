@@ -1,0 +1,119 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 5000,
+    "total_ms": 60.268,
+    "avg_ms": 0.0120536
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 5000,
+    "total_ms": 64.0826,
+    "avg_ms": 0.01281652
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 5000,
+    "total_ms": 2644.2301,
+    "avg_ms": 0.52884602
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 5000,
+    "total_ms": 2719.2544,
+    "avg_ms": 0.5438508799999999
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 5000,
+    "total_ms": 3201.7617,
+    "avg_ms": 0.64035234
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 127.2772,
+    "avg_ms": 2.545544
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 73.57,
+    "avg_ms": 1.4713999999999998
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 91.6897,
+    "avg_ms": 1.8337940000000001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 169.6469,
+    "avg_ms": 3.3929379999999996
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 76.5693,
+    "avg_ms": 1.531386
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 28.444,
+    "avg_ms": 0.5688799999999999
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 31.2598,
+    "avg_ms": 0.625196
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "hybrid",
+    "planner": "threshold",
+    "iterations": 50,
+    "total_ms": 62.0257,
+    "avg_ms": 1.2405140000000001
+  }
+]

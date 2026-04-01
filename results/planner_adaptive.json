@@ -1,0 +1,119 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 0.5175,
+    "avg_ms": 0.01035
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 1.0392,
+    "avg_ms": 0.020783999999999997
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 1.5655,
+    "avg_ms": 0.03131
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 1.5402,
+    "avg_ms": 0.030804
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 4.1553,
+    "avg_ms": 0.08310600000000001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 10.8723,
+    "avg_ms": 0.21744599999999997
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 28.4589,
+    "avg_ms": 0.569178
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 40.4381,
+    "avg_ms": 0.808762
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 77.1195,
+    "avg_ms": 1.5423900000000001
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 8.7796,
+    "avg_ms": 0.175592
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 26.658,
+    "avg_ms": 0.5331600000000001
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 31.0725,
+    "avg_ms": 0.6214500000000001
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "hybrid",
+    "planner": "adaptive",
+    "iterations": 50,
+    "total_ms": 61.0065,
+    "avg_ms": 1.2201300000000002
+  }
+]

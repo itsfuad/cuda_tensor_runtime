@@ -1,0 +1,119 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 5000,
+    "total_ms": 2679.0877,
+    "avg_ms": 0.53581754
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 5000,
+    "total_ms": 2602.3203,
+    "avg_ms": 0.52046406
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 5000,
+    "total_ms": 2674.2944,
+    "avg_ms": 0.53485888
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 5000,
+    "total_ms": 2669.0944,
+    "avg_ms": 0.53381888
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 5000,
+    "total_ms": 3106.0339,
+    "avg_ms": 0.62120678
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 127.1504,
+    "avg_ms": 2.543008
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 73.1093,
+    "avg_ms": 1.462186
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 97.4925,
+    "avg_ms": 1.94985
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 162.819,
+    "avg_ms": 3.2563799999999996
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 82.2158,
+    "avg_ms": 1.644316
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 26.2728,
+    "avg_ms": 0.525456
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 31.0174,
+    "avg_ms": 0.620348
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "cuda",
+    "planner": "cuda",
+    "iterations": 50,
+    "total_ms": 63.9899,
+    "avg_ms": 1.279798
+  }
+]

@@ -1,0 +1,6802 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cuda",
+    "elapsed_ms": 55.6041
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.523
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cuda",
+    "elapsed_ms": 0.519
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.041
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0.5237
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5361
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0.5161
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0.5169
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5161
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0.5208
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0.5199
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.0392
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5123
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0.5101
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0.5176
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0.5147
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0.518
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0.5188
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0.5129
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0.5134
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 56.8908
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0.5398
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5166
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0.5179
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0.5151
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0.5179
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0.5099
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0.5201
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0.5103
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0.5224
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0.5384
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0.5204
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0.5068
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0.513
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0.5136
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0.5137
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0.5133
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0.5129
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.0313
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 1.0469
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 1.0724
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5134
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 0.5131
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 0.531
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 0.5254
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 1.0669
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 0.5691
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 0.5172
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 1.0323
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 0.5082
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 0.5206
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 0.5389
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 0.544
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 1.0524
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 0.5148
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 0.5188
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 0.5163
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 1.0233
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 0.5276
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 0.5133
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 0.5099
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 1.0793
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 0.5134
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 0.5224
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 1.0025
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 1.5744
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 2.0029
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 1.0013
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 1.1014
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 0.9997
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 1.0005
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 1.0005
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 1.503
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 1.0031
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 10.5067
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 9.829
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.7848
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 1.0043
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cuda",
+    "elapsed_ms": 1.0035
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 0.9975
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 1.0141
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 1.004
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 0.9991
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cuda",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 1.0006
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 0.9998
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 1.0007
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 1.5028
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 1.0038
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 1.001
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 0.999
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 1.0006
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 1
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 1.5022
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 1.0033
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 1.5029
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.8018
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 112.1678
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 111.2457
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 2.0017
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 2.0007
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 1.0005
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 1.5028
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 1.5365
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 1.0039
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 1.5028
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 1.4229
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 1.0028
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 1.0038
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cuda",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 1.5039
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 1.0037
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 2.0007
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 0.9993
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cuda",
+    "elapsed_ms": 1.0008
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 2.0003
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 0.9991
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 1.5031
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 1.0039
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 0.9997
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 1.0007
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cuda",
+    "elapsed_ms": 2.0009
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 0.9993
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 1.5037
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 1.0041
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 1.9989
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 1.0009
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 1.5027
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 2.2993
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 1.0047
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 1.503
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 0.511
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 1.7806
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 1.0049
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 0.9986
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 1.0007
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 2.0004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 57.6535
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.047
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0.5548
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5281
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.0327
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0.5379
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0.5195
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0.5171
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0.5144
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0.515
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0.5172
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0.5143
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0.5421
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0.539
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0.5198
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0.5124
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0.5206
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0.5146
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0.5183
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.0604
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 1.5542
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 1.5455
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.5131
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.0935
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 0.5222
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 1.0336
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 0.5168
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cuda",
+    "elapsed_ms": 0.5237
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 0.5159
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 0.5193
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 0.5339
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 0.517
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 0.5411
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 0.5335
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 0.5155
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cuda",
+    "elapsed_ms": 0.5217
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 0.5134
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 0.5232
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 1.0029
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cuda",
+    "elapsed_ms": 1.0035
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 1.0008
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 1.0856
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 1.5032
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 1.0042
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 1.0006
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 0.9997
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 0.9993
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 1.0007
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 10.5065
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 10.1338
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.0033
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 0.9997
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cuda",
+    "elapsed_ms": 0.9997
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 0.9969
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 1.5029
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 1.0036
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 1.001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 0.9993
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 1.503
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 1.0029
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 1.0563
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 0.9996
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 1.5022
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 1.5099
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 1.0037
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 0.318
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 1.003
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 1.0006
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 1,
+    "backend": "cuda",
+    "elapsed_ms": 2.0032
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 113.7906
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 2,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 116.472
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 3,
+    "backend": "cpu",
+    "elapsed_ms": 1.0042
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 4,
+    "backend": "cuda",
+    "elapsed_ms": 2.0011
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cuda",
+    "elapsed_ms": 0.9996
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 5,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cuda",
+    "elapsed_ms": 1.0041
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 6,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cuda",
+    "elapsed_ms": 1.9991
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 7,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cuda",
+    "elapsed_ms": 1.0034
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 8,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cuda",
+    "elapsed_ms": 0.9998
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 9,
+    "backend": "cpu",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cuda",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 10,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cuda",
+    "elapsed_ms": 0.9998
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 11,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cuda",
+    "elapsed_ms": 1.0041
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 12,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cuda",
+    "elapsed_ms": 2.0015
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 13,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cuda",
+    "elapsed_ms": 0.9976
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 14,
+    "backend": "cpu",
+    "elapsed_ms": 1.0008
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 15,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cuda",
+    "elapsed_ms": 0.9991
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 16,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cuda",
+    "elapsed_ms": 1.0008
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 17,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cuda",
+    "elapsed_ms": 1.5025
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 18,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cuda",
+    "elapsed_ms": 1.0004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 19,
+    "backend": "cpu",
+    "elapsed_ms": 1.0003
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cuda",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 20,
+    "backend": "cpu",
+    "elapsed_ms": 1.5034
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cuda",
+    "elapsed_ms": 1.3466
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 21,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cuda",
+    "elapsed_ms": 1.0038
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 22,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cuda",
+    "elapsed_ms": 1.5032
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 23,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cuda",
+    "elapsed_ms": 1.5074
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 24,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cuda",
+    "elapsed_ms": 2.0032
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 25,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cuda",
+    "elapsed_ms": 1.0005
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 26,
+    "backend": "cpu",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 27,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 28,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cuda",
+    "elapsed_ms": 0.9998
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 29,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cuda",
+    "elapsed_ms": 0.5018
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 30,
+    "backend": "cpu",
+    "elapsed_ms": 1.0029
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 31,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cuda",
+    "elapsed_ms": 0.9988
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 32,
+    "backend": "cpu",
+    "elapsed_ms": 0.5036
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cuda",
+    "elapsed_ms": 1.004
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 33,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cuda",
+    "elapsed_ms": 2.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 34,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 35,
+    "backend": "cpu",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cuda",
+    "elapsed_ms": 0.9992
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 36,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cuda",
+    "elapsed_ms": 2.0277
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 37,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cuda",
+    "elapsed_ms": 0.9999
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 38,
+    "backend": "cpu",
+    "elapsed_ms": 0.9996
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cuda",
+    "elapsed_ms": 1.0005
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 39,
+    "backend": "cpu",
+    "elapsed_ms": 1.0002
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cuda",
+    "elapsed_ms": 0.9991
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 40,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cuda",
+    "elapsed_ms": 2.001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 41,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cuda",
+    "elapsed_ms": 0.9995
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 42,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cuda",
+    "elapsed_ms": 1.5308
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 43,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cuda",
+    "elapsed_ms": 2.1302
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 44,
+    "backend": "cpu",
+    "elapsed_ms": 0.6434
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cuda",
+    "elapsed_ms": 0.9996
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 45,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cuda",
+    "elapsed_ms": 1.9706
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 46,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cuda",
+    "elapsed_ms": 2.0065
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 47,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cuda",
+    "elapsed_ms": 0.9994
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 48,
+    "backend": "cpu",
+    "elapsed_ms": 1.0392
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cuda",
+    "elapsed_ms": 1.0001
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 49,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cuda",
+    "elapsed_ms": 1.9993
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "planner": "adaptive_cold",
+    "iteration": 50,
+    "backend": "cpu",
+    "elapsed_ms": 0
+  }
+]
