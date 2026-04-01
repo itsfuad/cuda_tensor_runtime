@@ -8,7 +8,6 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 
 
 def load_results(path):
@@ -114,6 +113,70 @@ def save_planner_speedup_plot(results, output_dir):
     plt.close(fig)
 
 
+def save_measured_baseline_plot(results, cpu_results, cuda_results, output_dir):
+    measured = results[results["planner"] == "measured"][
+        ["name", "size", "avg_ms"]
+    ].rename(columns={"avg_ms": "measured_avg_ms"})
+    cpu = cpu_results[["name", "size", "avg_ms"]].rename(
+        columns={"avg_ms": "cpu_avg_ms"}
+    )
+    cuda = cuda_results[["name", "size", "avg_ms"]].rename(
+        columns={"avg_ms": "cuda_avg_ms"}
+    )
+    merged = measured.merge(cpu, on=["name", "size"]).merge(cuda, on=["name", "size"])
+
+    workloads = list(merged["name"].unique())
+    fig, axes = plt.subplots(
+        1, len(workloads), figsize=(6 * len(workloads), 4.5), constrained_layout=True
+    )
+    if len(workloads) == 1:
+        axes = [axes]
+
+    palette = {"cpu": "#3366cc", "cuda": "#ff9900", "measured": "#dc3912"}
+    for ax, workload in zip(axes, workloads):
+        subset = merged[merged["name"] == workload].sort_values("size")
+        ax.plot(
+            subset["size"],
+            subset["cpu_avg_ms"],
+            marker="o",
+            linewidth=2,
+            linestyle="--",
+            label="cpu baseline",
+            color=palette["cpu"],
+        )
+        ax.plot(
+            subset["size"],
+            subset["cuda_avg_ms"],
+            marker="s",
+            linewidth=2,
+            linestyle="--",
+            label="cuda baseline",
+            color=palette["cuda"],
+        )
+        ax.plot(
+            subset["size"],
+            subset["measured_avg_ms"],
+            marker="D",
+            linewidth=2.5,
+            label="measured planner",
+            color=palette["measured"],
+        )
+        ax.set_xscale("log", base=2)
+        ax.set_yscale("log")
+        ax.set_title(workload.replace("_", " ").title())
+        ax.set_xlabel("Problem Size")
+        ax.set_ylabel("Average Latency (ms)")
+        ax.grid(True, alpha=0.3)
+        ax.legend()
+
+    fig.suptitle("Measured Planner vs CPU/CUDA Baselines", fontsize=14)
+    fig.savefig(
+        output_dir / "planner_measured_baselines.png", dpi=220, bbox_inches="tight"
+    )
+    fig.savefig(output_dir / "planner_measured_baselines.svg", bbox_inches="tight")
+    plt.close(fig)
+
+
 def save_adaptive_convergence_plot(samples, output_dir):
     adaptive = samples[samples["planner"] == "adaptive"].copy()
     if adaptive.empty:
@@ -167,7 +230,7 @@ def save_adaptive_convergence_plot(samples, output_dir):
     plt.close(fig)
 
 
-def write_summary(results, samples, output_dir):
+def write_summary(results, samples, output_dir, cpu_results=None, cuda_results=None):
     lines = [
         "# Planner Benchmark Summary",
         "",
@@ -198,6 +261,41 @@ def write_summary(results, samples, output_dir):
             for row in ratios.itertuples(index=False):
                 lines.append(f"| {row.name} | {row.size} | {row.cuda_choice:.3f} |")
 
+    if cpu_results is not None and cuda_results is not None:
+        measured = results[results["planner"] == "measured"][
+            ["name", "size", "avg_ms"]
+        ].rename(columns={"avg_ms": "measured_avg_ms"})
+        cpu = cpu_results[["name", "size", "avg_ms"]].rename(
+            columns={"avg_ms": "cpu_avg_ms"}
+        )
+        cuda = cuda_results[["name", "size", "avg_ms"]].rename(
+            columns={"avg_ms": "cuda_avg_ms"}
+        )
+        merged = measured.merge(cpu, on=["name", "size"]).merge(
+            cuda, on=["name", "size"]
+        )
+        merged["oracle_avg_ms"] = merged[["cpu_avg_ms", "cuda_avg_ms"]].min(axis=1)
+        merged["measured_vs_oracle"] = (
+            merged["measured_avg_ms"] / merged["oracle_avg_ms"]
+        )
+        merged["oracle_backend"] = merged.apply(
+            lambda row: "cuda" if row["cuda_avg_ms"] < row["cpu_avg_ms"] else "cpu",
+            axis=1,
+        )
+        lines.extend(
+            [
+                "",
+                "## Measured Planner vs Baselines",
+                "",
+                "| workload | size | oracle_backend | measured_vs_oracle |",
+                "| --- | ---: | --- | ---: |",
+            ]
+        )
+        for row in merged.sort_values(["name", "size"]).itertuples(index=False):
+            lines.append(
+                f"| {row.name} | {row.size} | {row.oracle_backend} | {row.measured_vs_oracle:.3f} |"
+            )
+
     (output_dir / "planner_summary.md").write_text(
         "\n".join(lines) + "\n", encoding="utf-8"
     )
@@ -209,6 +307,8 @@ def main():
     )
     parser.add_argument("--results", nargs="+", required=True)
     parser.add_argument("--trace", default="")
+    parser.add_argument("--cpu-results", default="")
+    parser.add_argument("--cuda-results", default="")
     parser.add_argument("--output-dir", required=True)
     args = parser.parse_args()
 
@@ -230,7 +330,16 @@ def main():
         samples = load_samples(args.trace)
         save_adaptive_convergence_plot(samples, output_dir)
 
-    write_summary(results, samples, output_dir)
+    cpu_results = None
+    cuda_results = None
+    if args.cpu_results and args.cuda_results:
+        cpu_results = load_results(args.cpu_results)
+        cuda_results = load_results(args.cuda_results)
+        save_measured_baseline_plot(results, cpu_results, cuda_results, output_dir)
+
+    write_summary(
+        results, samples, output_dir, cpu_results=cpu_results, cuda_results=cuda_results
+    )
 
 
 if __name__ == "__main__":

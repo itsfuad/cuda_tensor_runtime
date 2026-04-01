@@ -264,7 +264,9 @@ def run_plot_script(cpu_output, cuda_output, output_dir):
     )
 
 
-def run_planner_plot_script(results, trace, output_dir):
+def run_planner_plot_script(
+    results, trace, output_dir, *, cpu_results=None, cuda_results=None
+):
     cmd = [
         sys.executable,
         ROOT / "scripts" / "plot_planner_results.py",
@@ -275,6 +277,8 @@ def run_planner_plot_script(results, trace, output_dir):
     ]
     if trace:
         cmd += ["--trace", trace]
+    if cpu_results and cuda_results:
+        cmd += ["--cpu-results", cpu_results, "--cuda-results", cuda_results]
     run_checked(cmd)
 
 
@@ -381,6 +385,8 @@ def main():
             [threshold_output, measured_output, adaptive_output],
             adaptive_trace_output,
             Path(args.planner_plots_dir),
+            cpu_results=str(cpu_output),
+            cuda_results=str(cuda_output),
         )
 
 

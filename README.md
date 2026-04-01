@@ -98,7 +98,7 @@ To generate export files, plots, and a summary in one pass, use:
 ```bash
 python scripts/gpu_smoke.py
 python scripts/plot_results.py --cpu-results results/runtime_cpu.json --cuda-results results/runtime_cuda.json --output-dir results/plots
-python scripts/plot_planner_results.py --results results/planner_threshold.json results/planner_measured.json results/planner_adaptive.json --trace results/planner_adaptive_trace.json --output-dir results/planner_plots
+python scripts/plot_planner_results.py --results results/planner_threshold.json results/planner_measured.json results/planner_adaptive.json --trace results/planner_adaptive_trace.json --cpu-results results/runtime_cpu.json --cuda-results results/runtime_cuda.json --output-dir results/planner_plots
 ```
 
 Compare this runtime against an external baseline JSON file that uses the same schema:
