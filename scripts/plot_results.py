@@ -91,7 +91,7 @@ def save_speedup_plot(merged, output_dir):
         ax.set_ylabel("CPU / CUDA Speedup")
         ax.grid(True, alpha=0.3)
 
-    fig.suptitle("CUDA Speedup Relative to CPU", fontsize=14)
+    fig.suptitle("CPU / CUDA Speedup", fontsize=14)
     fig.savefig(output_dir / "runtime_speedup.png", dpi=220, bbox_inches="tight")
     fig.savefig(output_dir / "runtime_speedup.svg", bbox_inches="tight")
     plt.close(fig)

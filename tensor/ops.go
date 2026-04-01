@@ -50,7 +50,14 @@ func dispatch(op OpKind, work int, cpu func() (*Tensor, error), cuda func() (*Te
 	start := time.Now()
 	out, err := run()
 	if err == nil {
-		Observe(op, work, backend, time.Since(start))
+		elapsed := time.Since(start)
+		Observe(op, work, backend, elapsed)
+		emitExecutionObservation(ExecutionObservation{
+			Op:      op,
+			Work:    work,
+			Backend: backend,
+			Elapsed: elapsed,
+		})
 	}
 	return out, err
 }

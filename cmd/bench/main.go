@@ -24,19 +24,40 @@ func (m fixedCostModel) ShouldUseCUDA(op tensor.OpKind, work int) bool {
 func (m fixedCostModel) Observe(op tensor.OpKind, work int, backend tensor.ExecBackend, elapsed time.Duration) {
 }
 
+type traceRecorder struct {
+	planner   string
+	workload  string
+	size      int
+	iteration int
+	samples   []benchfmt.Sample
+}
+
 func main() {
 	workloadsFlag := flag.String("workloads", "add,matmul,compiled_graph", "comma-separated workloads: add,matmul,compiled_graph")
 	sizesFlag := flag.String("sizes", "64,128,256", "comma-separated sizes")
 	itersFlag := flag.Int("iters", 10, "iterations per workload")
 	formatFlag := flag.String("format", "text", "output format: text or json")
 	outputFlag := flag.String("output", "", "optional file path for JSON results")
+	traceOutputFlag := flag.String("trace-output", "", "optional file path for per-iteration planner samples")
+	plannerFlag := flag.String("planner", "threshold", "planner mode: cpu, cuda, threshold, measured, adaptive")
+	cpuResultsFlag := flag.String("cpu-results", "", "CPU benchmark JSON for measured planner mode")
+	cudaResultsFlag := flag.String("cuda-results", "", "CUDA benchmark JSON for measured planner mode")
+	adaptiveMinSamplesFlag := flag.Int("adaptive-min-samples", 2, "minimum samples per backend before adaptive planner exploits")
+	adaptiveExploreEveryFlag := flag.Int("adaptive-explore-every", 8, "adaptive exploration interval; 0 disables periodic exploration")
 	cudaFlag := flag.Bool("cuda", false, "force CUDA dispatch")
 	flag.Parse()
 
 	if *itersFlag <= 0 {
 		log.Fatal("iters must be > 0")
 	}
-	if *cudaFlag && !tensor.CUDAAvailable() {
+	plannerMode := *plannerFlag
+	if *cudaFlag {
+		plannerMode = "cuda"
+	}
+	if plannerMode != "cpu" && plannerMode != "threshold" && plannerMode != "measured" && plannerMode != "adaptive" && plannerMode != "cuda" {
+		log.Fatalf("unsupported planner mode %q", plannerMode)
+	}
+	if (plannerMode == "cuda" || plannerMode == "threshold" || plannerMode == "measured" || plannerMode == "adaptive") && !tensor.CUDAAvailable() && plannerMode == "cuda" {
 		log.Fatal("cuda requested but unavailable")
 	}
 
@@ -50,22 +71,33 @@ func main() {
 	}
 
 	prev := tensor.CurrentCostModel()
-	tensor.SetCostModel(fixedCostModel{useCUDA: *cudaFlag})
-	defer tensor.SetCostModel(prev)
-
-	device := "cpu"
-	if *cudaFlag {
-		device = "cuda"
+	model, err := buildCostModel(plannerMode, *cpuResultsFlag, *cudaResultsFlag, *adaptiveMinSamplesFlag, *adaptiveExploreEveryFlag)
+	if err != nil {
+		log.Fatal(err)
 	}
+	tensor.SetCostModel(model)
+	defer tensor.SetCostModel(prev)
+	tensor.SetExecutionObserver(nil)
+
+	device := plannerDevice(plannerMode)
 
 	var results []benchfmt.Result
+	var samples []benchfmt.Sample
 	for _, workload := range workloads {
 		for _, size := range sizes {
-			result, err := runWorkload(workload, size, *itersFlag, device)
+			recorder := &traceRecorder{planner: plannerMode, workload: workload, size: size}
+			if *traceOutputFlag != "" {
+				tensor.SetExecutionObserver(recorder.observe)
+			}
+			result, err := runWorkload(workload, size, *itersFlag, device, plannerMode, recorder)
 			if err != nil {
 				log.Fatal(err)
 			}
 			results = append(results, result)
+			if *traceOutputFlag != "" {
+				samples = append(samples, recorder.samples...)
+				tensor.SetExecutionObserver(nil)
+			}
 		}
 	}
 
@@ -83,21 +115,26 @@ func main() {
 			log.Fatal(err)
 		}
 	}
+	if *traceOutputFlag != "" {
+		if err := benchfmt.WriteSamples(*traceOutputFlag, samples); err != nil {
+			log.Fatal(err)
+		}
+	}
 }
 
-func runWorkload(workload string, size, iterations int, device string) (benchfmt.Result, error) {
+func runWorkload(workload string, size, iterations int, device string, planner string, recorder *traceRecorder) (benchfmt.Result, error) {
 	switch workload {
 	case "add":
 		a := benchmarkTensor([]int{size})
 		b := benchmarkTensor([]int{size})
-		return measure(workload, size, device, iterations, func() error {
+		return measure(workload, size, device, planner, iterations, recorder, func() error {
 			_, err := tensor.Add(a, b)
 			return err
 		})
 	case "matmul":
 		a := benchmarkTensor([]int{size, size})
 		b := benchmarkTensor([]int{size, size})
-		return measure(workload, size, device, iterations, func() error {
+		return measure(workload, size, device, planner, iterations, recorder, func() error {
 			_, err := tensor.MatMul(a, b)
 			return err
 		})
@@ -113,7 +150,7 @@ func runWorkload(workload string, size, iterations int, device string) (benchfmt
 			"x": benchmarkTensor([]int{size, size}),
 			"w": benchmarkTensor([]int{size, size}),
 		}
-		return measure(workload, size, device, iterations, func() error {
+		return measure(workload, size, device, planner, iterations, recorder, func() error {
 			_, err := prog.Run(inputs)
 			return err
 		})
@@ -122,9 +159,12 @@ func runWorkload(workload string, size, iterations int, device string) (benchfmt
 	}
 }
 
-func measure(name string, size int, device string, iterations int, fn func() error) (benchfmt.Result, error) {
+func measure(name string, size int, device string, planner string, iterations int, recorder *traceRecorder, fn func() error) (benchfmt.Result, error) {
 	start := time.Now()
 	for i := 0; i < iterations; i++ {
+		if recorder != nil {
+			recorder.iteration = i + 1
+		}
 		if err := fn(); err != nil {
 			return benchfmt.Result{}, err
 		}
@@ -134,6 +174,7 @@ func measure(name string, size int, device string, iterations int, fn func() err
 		Name:       name,
 		Size:       size,
 		Device:     device,
+		Planner:    planner,
 		Iterations: iterations,
 		TotalMs:    float64(total) / float64(time.Millisecond),
 		AvgMs:      float64(total) / float64(time.Millisecond) / float64(iterations),
@@ -141,10 +182,10 @@ func measure(name string, size int, device string, iterations int, fn func() err
 }
 
 func printText(results []benchfmt.Result) {
-	fmt.Printf("%-16s %-8s %-8s %-12s %-12s %-12s\n", "workload", "size", "device", "iterations", "total_ms", "avg_ms")
+	fmt.Printf("%-16s %-8s %-10s %-8s %-12s %-12s %-12s\n", "workload", "size", "planner", "device", "iterations", "total_ms", "avg_ms")
 	for _, result := range results {
-		fmt.Printf("%-16s %-8d %-8s %-12d %-12.3f %-12.3f\n",
-			result.Name, result.Size, result.Device, result.Iterations, result.TotalMs, result.AvgMs)
+		fmt.Printf("%-16s %-8d %-10s %-8s %-12d %-12.3f %-12.3f\n",
+			result.Name, result.Size, result.Planner, result.Device, result.Iterations, result.TotalMs, result.AvgMs)
 	}
 }
 
@@ -196,4 +237,50 @@ func benchmarkTensor(shape []int) *tensor.Tensor {
 		panic(err)
 	}
 	return t
+}
+
+func buildCostModel(plannerMode, cpuResultsPath, cudaResultsPath string, adaptiveMinSamples, adaptiveExploreEvery int) (tensor.CostModel, error) {
+	switch plannerMode {
+	case "cpu":
+		return fixedCostModel{useCUDA: false}, nil
+	case "cuda":
+		return fixedCostModel{useCUDA: true}, nil
+	case "threshold":
+		return tensor.ThresholdCostModel{}, nil
+	case "measured":
+		if cpuResultsPath == "" || cudaResultsPath == "" {
+			return nil, fmt.Errorf("measured planner requires -cpu-results and -cuda-results")
+		}
+		model, err := tensor.LoadMeasuredCostModel(cpuResultsPath, cudaResultsPath)
+		if err != nil {
+			return nil, err
+		}
+		return model, nil
+	case "adaptive":
+		return tensor.NewAdaptiveCostModel(tensor.ThresholdCostModel{}, adaptiveMinSamples, adaptiveExploreEvery), nil
+	default:
+		return nil, fmt.Errorf("unsupported planner mode %q", plannerMode)
+	}
+}
+
+func plannerDevice(plannerMode string) string {
+	switch plannerMode {
+	case "cpu":
+		return "cpu"
+	case "cuda":
+		return "cuda"
+	default:
+		return "hybrid"
+	}
+}
+
+func (r *traceRecorder) observe(observation tensor.ExecutionObservation) {
+	r.samples = append(r.samples, benchfmt.Sample{
+		Name:      r.workload,
+		Size:      r.size,
+		Planner:   r.planner,
+		Iteration: r.iteration,
+		Backend:   string(observation.Backend),
+		ElapsedMs: float64(observation.Elapsed) / float64(time.Millisecond),
+	})
 }

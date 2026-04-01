@@ -7,9 +7,9 @@ import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parent.parent
 CUDA_DIR = ROOT / "cuda"
@@ -43,14 +43,30 @@ def find_nvcc():
 
 def find_vcvars():
     candidates = [
-        Path(r"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"),
-        Path(r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"),
+        Path(
+            r"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+        ),
+        Path(
+            r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        ),
     ]
     for candidate in candidates:
         if candidate.exists():
@@ -91,7 +107,9 @@ def run_windows_nvcc(nvcc, arch):
 
     vcvars = find_vcvars()
     if not vcvars:
-        raise RuntimeError("Unable to find cl.exe or vcvars64.bat for the Windows CUDA build.")
+        raise RuntimeError(
+            "Unable to find cl.exe or vcvars64.bat for the Windows CUDA build."
+        )
 
     command = (
         f'call "{vcvars}" >nul && '
@@ -105,7 +123,9 @@ def build_cuda_artifact(arch):
     if platform.system() == "Windows":
         nvcc = find_nvcc()
         if not nvcc:
-            raise RuntimeError("Unable to find nvcc. Set CUDA_PATH or add nvcc to PATH.")
+            raise RuntimeError(
+                "Unable to find nvcc. Set CUDA_PATH or add nvcc to PATH."
+            )
         run_windows_nvcc(nvcc, arch)
         return
 
@@ -142,6 +162,56 @@ def run_bench_export(device, config):
     return merge_results(chunks)
 
 
+def run_planner_export(
+    planner,
+    config,
+    *,
+    cpu_results=None,
+    cuda_results=None,
+    trace_output=None,
+    iterations_override=None,
+):
+    chunks = []
+    samples = []
+    for workload, entry in config.items():
+        cmd = [
+            "go",
+            "run",
+            "-tags",
+            "cuda",
+            "./cmd/bench",
+            "-format",
+            "json",
+            "-planner",
+            planner,
+            "-workloads",
+            workload,
+            "-sizes",
+            ",".join(str(size) for size in entry["sizes"]),
+            "-iters",
+            str(iterations_override or entry["iters"]),
+        ]
+        if planner == "measured":
+            cmd += ["-cpu-results", cpu_results, "-cuda-results", cuda_results]
+        trace_path = None
+        if trace_output and planner == "adaptive":
+            fd, temp_path = tempfile.mkstemp(
+                prefix=f"{workload}_adaptive_", suffix=".json"
+            )
+            os.close(fd)
+            trace_path = Path(temp_path)
+            cmd += ["-trace-output", trace_path]
+        proc = run_checked(cmd, env=go_env(cuda_enabled=True), capture=True)
+        chunks.append(json.loads(proc.stdout))
+        if trace_path is not None:
+            with trace_path.open("r", encoding="utf-8") as handle:
+                samples.extend(json.load(handle))
+            trace_path.unlink(missing_ok=True)
+    if trace_output and planner == "adaptive":
+        write_json(Path(trace_output), samples)
+    return merge_results(chunks)
+
+
 def write_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
@@ -166,7 +236,9 @@ def write_metadata(path, config, arch):
         },
         "toolchain": {
             "go_version": capture_command_output(["go", "version"]),
-            "nvcc_version": capture_command_output([find_nvcc() or "nvcc", "--version"]),
+            "nvcc_version": capture_command_output(
+                [find_nvcc() or "nvcc", "--version"]
+            ),
             "nvidia_smi": capture_command_output(["nvidia-smi"]),
         },
         "bench_config": {
@@ -192,13 +264,49 @@ def run_plot_script(cpu_output, cuda_output, output_dir):
     )
 
 
+def run_planner_plot_script(results, trace, output_dir):
+    cmd = [
+        sys.executable,
+        ROOT / "scripts" / "plot_planner_results.py",
+        "--results",
+        *[str(path) for path in results],
+        "--output-dir",
+        output_dir,
+    ]
+    if trace:
+        cmd += ["--trace", trace]
+    run_checked(cmd)
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Cross-platform CUDA smoke runner with JSON export and plotting.")
-    parser.add_argument("--arch", default="native" if platform.system() == "Windows" else "sm_75")
+    parser = argparse.ArgumentParser(
+        description="Cross-platform CUDA smoke runner with JSON export and plotting."
+    )
+    parser.add_argument(
+        "--arch", default="native" if platform.system() == "Windows" else "sm_75"
+    )
     parser.add_argument("--cpu-output", default=str(RESULTS_DIR / "runtime_cpu.json"))
     parser.add_argument("--cuda-output", default=str(RESULTS_DIR / "runtime_cuda.json"))
-    parser.add_argument("--metadata-output", default=str(RESULTS_DIR / "runtime_metadata.json"))
+    parser.add_argument(
+        "--metadata-output", default=str(RESULTS_DIR / "runtime_metadata.json")
+    )
     parser.add_argument("--plots-dir", default=str(RESULTS_DIR / "plots"))
+    parser.add_argument(
+        "--planner-plots-dir", default=str(RESULTS_DIR / "planner_plots")
+    )
+    parser.add_argument(
+        "--threshold-output", default=str(RESULTS_DIR / "planner_threshold.json")
+    )
+    parser.add_argument(
+        "--measured-output", default=str(RESULTS_DIR / "planner_measured.json")
+    )
+    parser.add_argument(
+        "--adaptive-output", default=str(RESULTS_DIR / "planner_adaptive.json")
+    )
+    parser.add_argument(
+        "--adaptive-trace-output",
+        default=str(RESULTS_DIR / "planner_adaptive_trace.json"),
+    )
     parser.add_argument("--add-sizes", default="256,1024,4096,16384,65536")
     parser.add_argument("--matmul-sizes", default="64,128,256,512")
     parser.add_argument("--compiled-graph-sizes", default="64,128,256,512")
@@ -213,7 +321,10 @@ def main():
 
     config = {
         "add": {"sizes": parse_int_list(args.add_sizes), "iters": args.add_iters},
-        "matmul": {"sizes": parse_int_list(args.matmul_sizes), "iters": args.matmul_iters},
+        "matmul": {
+            "sizes": parse_int_list(args.matmul_sizes),
+            "iters": args.matmul_iters,
+        },
         "compiled_graph": {
             "sizes": parse_int_list(args.compiled_graph_sizes),
             "iters": args.compiled_graph_iters,
@@ -223,10 +334,14 @@ def main():
     build_cuda_artifact(args.arch)
 
     if not args.skip_tests:
-        run_checked(["go", "test", "-tags", "cuda", "./..."], env=go_env(cuda_enabled=True))
+        run_checked(
+            ["go", "test", "-tags", "cuda", "./..."], env=go_env(cuda_enabled=True)
+        )
 
     if not args.skip_demo:
-        run_checked(["go", "run", "-tags", "cuda", "./cmd/demo"], env=go_env(cuda_enabled=True))
+        run_checked(
+            ["go", "run", "-tags", "cuda", "./cmd/demo"], env=go_env(cuda_enabled=True)
+        )
 
     if args.skip_bench:
         return
@@ -239,8 +354,34 @@ def main():
     write_json(cuda_output, cuda_results)
     write_metadata(Path(args.metadata_output), config, args.arch)
 
+    threshold_output = Path(args.threshold_output)
+    measured_output = Path(args.measured_output)
+    adaptive_output = Path(args.adaptive_output)
+    adaptive_trace_output = Path(args.adaptive_trace_output)
+    threshold_results = run_planner_export("threshold", config)
+    measured_results = run_planner_export(
+        "measured",
+        config,
+        cpu_results=str(cpu_output),
+        cuda_results=str(cuda_output),
+    )
+    adaptive_results = run_planner_export(
+        "adaptive",
+        config,
+        trace_output=str(adaptive_trace_output),
+        iterations_override=max(args.matmul_iters, 20),
+    )
+    write_json(threshold_output, threshold_results)
+    write_json(measured_output, measured_results)
+    write_json(adaptive_output, adaptive_results)
+
     if not args.skip_plots:
         run_plot_script(cpu_output, cuda_output, Path(args.plots_dir))
+        run_planner_plot_script(
+            [threshold_output, measured_output, adaptive_output],
+            adaptive_trace_output,
+            Path(args.planner_plots_dir),
+        )
 
 
 if __name__ == "__main__":
