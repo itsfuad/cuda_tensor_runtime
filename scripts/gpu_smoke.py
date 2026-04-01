@@ -170,6 +170,8 @@ def run_planner_export(
     cuda_results=None,
     trace_output=None,
     iterations_override=None,
+    warmup_iters=0,
+    planner_label=None,
 ):
     chunks = []
     samples = []
@@ -191,6 +193,10 @@ def run_planner_export(
             "-iters",
             str(iterations_override or entry["iters"]),
         ]
+        if planner_label:
+            cmd += ["-planner-label", planner_label]
+        if warmup_iters:
+            cmd += ["-warmup-iters", str(warmup_iters)]
         if planner == "measured":
             cmd += ["-cpu-results", cpu_results, "-cuda-results", cuda_results]
         trace_path = None
@@ -308,6 +314,10 @@ def main():
         "--adaptive-output", default=str(RESULTS_DIR / "planner_adaptive.json")
     )
     parser.add_argument(
+        "--adaptive-cold-output",
+        default=str(RESULTS_DIR / "planner_adaptive_cold.json"),
+    )
+    parser.add_argument(
         "--adaptive-trace-output",
         default=str(RESULTS_DIR / "planner_adaptive_trace.json"),
     )
@@ -317,6 +327,7 @@ def main():
     parser.add_argument("--add-iters", type=int, default=5000)
     parser.add_argument("--matmul-iters", type=int, default=50)
     parser.add_argument("--compiled-graph-iters", type=int, default=50)
+    parser.add_argument("--adaptive-warmup-iters", type=int, default=12)
     parser.add_argument("--skip-tests", action="store_true")
     parser.add_argument("--skip-demo", action="store_true")
     parser.add_argument("--skip-bench", action="store_true")
@@ -361,6 +372,7 @@ def main():
     threshold_output = Path(args.threshold_output)
     measured_output = Path(args.measured_output)
     adaptive_output = Path(args.adaptive_output)
+    adaptive_cold_output = Path(args.adaptive_cold_output)
     adaptive_trace_output = Path(args.adaptive_trace_output)
     threshold_results = run_planner_export("threshold", config)
     measured_results = run_planner_export(
@@ -369,20 +381,29 @@ def main():
         cpu_results=str(cpu_output),
         cuda_results=str(cuda_output),
     )
-    adaptive_results = run_planner_export(
+    adaptive_cold_results = run_planner_export(
         "adaptive",
         config,
         trace_output=str(adaptive_trace_output),
         iterations_override=max(args.matmul_iters, 20),
+        planner_label="adaptive_cold",
+    )
+    adaptive_results = run_planner_export(
+        "adaptive",
+        config,
+        iterations_override=max(args.matmul_iters, 20),
+        warmup_iters=args.adaptive_warmup_iters,
+        planner_label="adaptive",
     )
     write_json(threshold_output, threshold_results)
     write_json(measured_output, measured_results)
+    write_json(adaptive_cold_output, adaptive_cold_results)
     write_json(adaptive_output, adaptive_results)
 
     if not args.skip_plots:
         run_plot_script(cpu_output, cuda_output, Path(args.plots_dir))
         run_planner_plot_script(
-            [threshold_output, measured_output, adaptive_output],
+            [threshold_output, measured_output, adaptive_output, adaptive_cold_output],
             adaptive_trace_output,
             Path(args.planner_plots_dir),
             cpu_results=str(cpu_output),

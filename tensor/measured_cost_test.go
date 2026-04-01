@@ -49,3 +49,36 @@ func TestMeasuredCostModelUsesDerivedThresholds(t *testing.T) {
 		t.Fatal("ShouldUseCUDA(matmul, 512) = true, want false")
 	}
 }
+
+func TestMeasuredCostModelPinsNoCrossoverOpsToCPU(t *testing.T) {
+	dir := t.TempDir()
+	cpuPath := filepath.Join(dir, "cpu.json")
+	cudaPath := filepath.Join(dir, "cuda.json")
+
+	cpuResults := []benchfmt.Result{
+		{Name: "add", Size: 64, Device: "cpu", AvgMs: 1.0},
+		{Name: "add", Size: 256, Device: "cpu", AvgMs: 2.0},
+	}
+	cudaResults := []benchfmt.Result{
+		{Name: "add", Size: 64, Device: "cuda", AvgMs: 4.0},
+		{Name: "add", Size: 256, Device: "cuda", AvgMs: 5.0},
+	}
+	if err := benchfmt.WriteFile(cpuPath, cpuResults); err != nil {
+		t.Fatal(err)
+	}
+	if err := benchfmt.WriteFile(cudaPath, cudaResults); err != nil {
+		t.Fatal(err)
+	}
+
+	model, err := LoadMeasuredCostModel(cpuPath, cudaPath)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if model.ShouldUseCUDA(OpAdd, 64) {
+		t.Fatal("ShouldUseCUDA(add, 64) = true, want false when CUDA never wins")
+	}
+	if model.ShouldUseCUDA(OpAdd, 1<<20) {
+		t.Fatal("ShouldUseCUDA(add, huge) = true, want false when CUDA never wins")
+	}
+}

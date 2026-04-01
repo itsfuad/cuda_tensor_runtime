@@ -26,7 +26,12 @@ def save_planner_latency_plot(results, output_dir):
     if len(workloads) == 1:
         axes = [axes]
 
-    palette = {"threshold": "#3366cc", "measured": "#dc3912", "adaptive": "#109618"}
+    palette = {
+        "threshold": "#3366cc",
+        "measured": "#dc3912",
+        "adaptive": "#109618",
+        "adaptive_cold": "#66aa00",
+    }
     for ax, workload in zip(axes, workloads):
         subset = results[results["name"] == workload]
         for planner, planner_subset in subset.groupby("planner"):
@@ -178,9 +183,11 @@ def save_measured_baseline_plot(results, cpu_results, cuda_results, output_dir):
 
 
 def save_adaptive_convergence_plot(samples, output_dir):
-    adaptive = samples[samples["planner"] == "adaptive"].copy()
+    adaptive = samples[samples["planner"].isin(["adaptive_cold", "adaptive"])].copy()
     if adaptive.empty:
         return
+    if (adaptive["planner"] == "adaptive_cold").any():
+        adaptive = adaptive[adaptive["planner"] == "adaptive_cold"].copy()
 
     adaptive["mean_elapsed_ms"] = adaptive.groupby(["name", "size"])[
         "elapsed_ms"
@@ -250,7 +257,9 @@ def write_summary(results, samples, output_dir, cpu_results=None, cuda_results=N
                 "| --- | ---: | ---: |",
             ]
         )
-        adaptive = samples[samples["planner"] == "adaptive"]
+        adaptive = samples[samples["planner"].isin(["adaptive_cold", "adaptive"])]
+        if not adaptive.empty and (adaptive["planner"] == "adaptive_cold").any():
+            adaptive = adaptive[adaptive["planner"] == "adaptive_cold"]
         if not adaptive.empty:
             ratios = (
                 adaptive.assign(cuda_choice=(adaptive["backend"] == "cuda").astype(int))
@@ -294,6 +303,31 @@ def write_summary(results, samples, output_dir, cpu_results=None, cuda_results=N
         for row in merged.sort_values(["name", "size"]).itertuples(index=False):
             lines.append(
                 f"| {row.name} | {row.size} | {row.oracle_backend} | {row.measured_vs_oracle:.3f} |"
+            )
+
+    threshold = results[results["planner"] == "threshold"][
+        ["name", "size", "avg_ms"]
+    ].rename(columns={"avg_ms": "threshold_avg_ms"})
+    adaptive = results[results["planner"] == "adaptive"][
+        ["name", "size", "avg_ms"]
+    ].rename(columns={"avg_ms": "adaptive_avg_ms"})
+    if not threshold.empty and not adaptive.empty:
+        merged = threshold.merge(adaptive, on=["name", "size"])
+        merged["adaptive_vs_threshold"] = (
+            merged["threshold_avg_ms"] / merged["adaptive_avg_ms"]
+        )
+        lines.extend(
+            [
+                "",
+                "## Warmed Adaptive vs Threshold",
+                "",
+                "| workload | size | adaptive_vs_threshold |",
+                "| --- | ---: | ---: |",
+            ]
+        )
+        for row in merged.sort_values(["name", "size"]).itertuples(index=False):
+            lines.append(
+                f"| {row.name} | {row.size} | {row.adaptive_vs_threshold:.3f} |"
             )
 
     (output_dir / "planner_summary.md").write_text(

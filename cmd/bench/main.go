@@ -40,15 +40,20 @@ func main() {
 	outputFlag := flag.String("output", "", "optional file path for JSON results")
 	traceOutputFlag := flag.String("trace-output", "", "optional file path for per-iteration planner samples")
 	plannerFlag := flag.String("planner", "threshold", "planner mode: cpu, cuda, threshold, measured, adaptive")
+	plannerLabelFlag := flag.String("planner-label", "", "optional label to store in output instead of planner mode")
 	cpuResultsFlag := flag.String("cpu-results", "", "CPU benchmark JSON for measured planner mode")
 	cudaResultsFlag := flag.String("cuda-results", "", "CUDA benchmark JSON for measured planner mode")
 	adaptiveMinSamplesFlag := flag.Int("adaptive-min-samples", 2, "minimum samples per backend before adaptive planner exploits")
 	adaptiveExploreEveryFlag := flag.Int("adaptive-explore-every", 8, "adaptive exploration interval; 0 disables periodic exploration")
+	warmupItersFlag := flag.Int("warmup-iters", 0, "iterations to run before timing; useful for adaptive steady-state evaluation")
 	cudaFlag := flag.Bool("cuda", false, "force CUDA dispatch")
 	flag.Parse()
 
 	if *itersFlag <= 0 {
 		log.Fatal("iters must be > 0")
+	}
+	if *warmupItersFlag < 0 {
+		log.Fatal("warmup-iters must be >= 0")
 	}
 	plannerMode := *plannerFlag
 	if *cudaFlag {
@@ -80,16 +85,20 @@ func main() {
 	tensor.SetExecutionObserver(nil)
 
 	device := plannerDevice(plannerMode)
+	plannerLabel := plannerMode
+	if *plannerLabelFlag != "" {
+		plannerLabel = *plannerLabelFlag
+	}
 
 	var results []benchfmt.Result
 	var samples []benchfmt.Sample
 	for _, workload := range workloads {
 		for _, size := range sizes {
-			recorder := &traceRecorder{planner: plannerMode, workload: workload, size: size}
+			recorder := &traceRecorder{planner: plannerLabel, workload: workload, size: size}
 			if *traceOutputFlag != "" {
 				tensor.SetExecutionObserver(recorder.observe)
 			}
-			result, err := runWorkload(workload, size, *itersFlag, device, plannerMode, recorder)
+			result, err := runWorkload(workload, size, *itersFlag, *warmupItersFlag, device, plannerLabel, recorder)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -122,19 +131,19 @@ func main() {
 	}
 }
 
-func runWorkload(workload string, size, iterations int, device string, planner string, recorder *traceRecorder) (benchfmt.Result, error) {
+func runWorkload(workload string, size, iterations, warmupIters int, device string, planner string, recorder *traceRecorder) (benchfmt.Result, error) {
 	switch workload {
 	case "add":
 		a := benchmarkTensor([]int{size})
 		b := benchmarkTensor([]int{size})
-		return measure(workload, size, device, planner, iterations, recorder, func() error {
+		return measure(workload, size, device, planner, iterations, warmupIters, recorder, func() error {
 			_, err := tensor.Add(a, b)
 			return err
 		})
 	case "matmul":
 		a := benchmarkTensor([]int{size, size})
 		b := benchmarkTensor([]int{size, size})
-		return measure(workload, size, device, planner, iterations, recorder, func() error {
+		return measure(workload, size, device, planner, iterations, warmupIters, recorder, func() error {
 			_, err := tensor.MatMul(a, b)
 			return err
 		})
@@ -150,7 +159,7 @@ func runWorkload(workload string, size, iterations int, device string, planner s
 			"x": benchmarkTensor([]int{size, size}),
 			"w": benchmarkTensor([]int{size, size}),
 		}
-		return measure(workload, size, device, planner, iterations, recorder, func() error {
+		return measure(workload, size, device, planner, iterations, warmupIters, recorder, func() error {
 			_, err := prog.Run(inputs)
 			return err
 		})
@@ -159,7 +168,12 @@ func runWorkload(workload string, size, iterations int, device string, planner s
 	}
 }
 
-func measure(name string, size int, device string, planner string, iterations int, recorder *traceRecorder, fn func() error) (benchfmt.Result, error) {
+func measure(name string, size int, device string, planner string, iterations int, warmupIters int, recorder *traceRecorder, fn func() error) (benchfmt.Result, error) {
+	for i := 0; i < warmupIters; i++ {
+		if err := fn(); err != nil {
+			return benchfmt.Result{}, err
+		}
+	}
 	start := time.Now()
 	for i := 0; i < iterations; i++ {
 		if recorder != nil {

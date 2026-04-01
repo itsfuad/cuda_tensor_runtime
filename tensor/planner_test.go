@@ -126,6 +126,7 @@ func TestAdaptiveCostModelLearnsPreferredBackend(t *testing.T) {
 
 func TestAdaptiveCostModelExploresPeriodically(t *testing.T) {
 	model := NewAdaptiveCostModel(ThresholdCostModel{CUDAThreshold: 1}, 1, 2)
+	model.ExploreRatio = 10
 	model.Observe(OpAdd, 128, BackendCPU, 4*time.Millisecond)
 	model.Observe(OpAdd, 128, BackendCUDA, 1*time.Millisecond)
 
@@ -134,5 +135,18 @@ func TestAdaptiveCostModelExploresPeriodically(t *testing.T) {
 	}
 	if model.ShouldUseCUDA(OpAdd, 128) {
 		t.Fatal("second decision = true, want false due to exploration")
+	}
+}
+
+func TestAdaptiveCostModelStopsExploringWhenGapIsLarge(t *testing.T) {
+	model := NewAdaptiveCostModel(ThresholdCostModel{CUDAThreshold: 1}, 1, 2)
+	model.Observe(OpMatMul, 4096, BackendCPU, 20*time.Millisecond)
+	model.Observe(OpMatMul, 4096, BackendCUDA, 1*time.Millisecond)
+
+	if !model.ShouldUseCUDA(OpMatMul, 4096) {
+		t.Fatal("first decision = false, want true for faster CUDA")
+	}
+	if !model.ShouldUseCUDA(OpMatMul, 4096) {
+		t.Fatal("second decision = false, want true because exploration should stop for large gap")
 	}
 }

@@ -6,3 +6,4 @@ cuda/cudatensor.lib
 *.json
 __pycache__/
 *.pyc
+*.tex

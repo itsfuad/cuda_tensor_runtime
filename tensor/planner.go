@@ -48,6 +48,7 @@ type AdaptiveCostModel struct {
 	Fallback     CostModel
 	MinSamples   int
 	ExploreEvery int
+	ExploreRatio float64
 
 	mu      sync.Mutex
 	buckets map[OpKind]map[int]*adaptiveBucketStats
@@ -78,6 +79,7 @@ func NewAdaptiveCostModel(fallback CostModel, minSamples, exploreEvery int) *Ada
 		Fallback:     fallback,
 		MinSamples:   minSamples,
 		ExploreEvery: exploreEvery,
+		ExploreRatio: 2.0,
 		buckets:      make(map[OpKind]map[int]*adaptiveBucketStats),
 	}
 }
@@ -102,7 +104,7 @@ func (m *AdaptiveCostModel) ShouldUseCUDA(op OpKind, work int) bool {
 	}
 
 	preferCUDA := stats.cuda.avgNs < stats.cpu.avgNs
-	if m.ExploreEvery > 0 && stats.decisions%m.ExploreEvery == 0 {
+	if m.shouldExplore(stats, preferCUDA) {
 		return !preferCUDA
 	}
 	return preferCUDA
@@ -146,6 +148,23 @@ func updateAdaptiveStats(stats *adaptiveBackendStats, elapsed time.Duration) {
 		return
 	}
 	stats.avgNs += (ns - stats.avgNs) / float64(stats.count)
+}
+
+func (m *AdaptiveCostModel) shouldExplore(stats *adaptiveBucketStats, preferCUDA bool) bool {
+	if m.ExploreEvery <= 0 || stats.decisions%m.ExploreEvery != 0 {
+		return false
+	}
+	faster := stats.cpu.avgNs
+	slower := stats.cuda.avgNs
+	if preferCUDA {
+		faster = stats.cuda.avgNs
+		slower = stats.cpu.avgNs
+	}
+	if faster <= 0 {
+		return false
+	}
+	ratio := slower / faster
+	return ratio < m.ExploreRatio
 }
 
 func bucketWork(work int) int {
