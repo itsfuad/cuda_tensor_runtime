@@ -224,6 +224,11 @@ def write_json(path, payload):
         json.dump(payload, handle, indent=2)
 
 
+def write_text(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
 def capture_command_output(cmd):
     try:
         return run_checked(cmd, capture=True).stdout.strip()
@@ -268,6 +273,63 @@ def run_plot_script(cpu_output, cuda_output, output_dir):
             output_dir,
         ]
     )
+
+
+def module_available(module_name):
+    try:
+        __import__(module_name)
+        return True
+    except Exception:
+        return False
+
+
+def run_baseline_script(script_name, device, output_path, config):
+    chunks = []
+    for workload, entry in config.items():
+        fd, temp_path = tempfile.mkstemp(
+            prefix=f"{script_name}_{workload}_", suffix=".json"
+        )
+        os.close(fd)
+        temp_output = Path(temp_path)
+        cmd = [
+            sys.executable,
+            ROOT / "scripts" / script_name,
+            "--device",
+            device,
+            "--output",
+            temp_output,
+            "--workloads",
+            workload,
+            "--sizes",
+            ",".join(str(size) for size in entry["sizes"]),
+            "--iters",
+            str(entry["iters"]),
+        ]
+        run_checked(cmd)
+        with temp_output.open("r", encoding="utf-8") as handle:
+            chunks.append(json.load(handle))
+        temp_output.unlink(missing_ok=True)
+    write_json(Path(output_path), merge_results(chunks))
+
+
+def compare_results(base_path, candidate_path, base_name, candidate_name):
+    proc = run_checked(
+        [
+            "go",
+            "run",
+            "./cmd/compare",
+            "-base",
+            base_path,
+            "-candidate",
+            candidate_path,
+            "-base-name",
+            base_name,
+            "-candidate-name",
+            candidate_name,
+        ],
+        capture=True,
+    )
+    return proc.stdout
 
 
 def run_planner_plot_script(
@@ -321,6 +383,17 @@ def main():
         "--adaptive-trace-output",
         default=str(RESULTS_DIR / "planner_adaptive_trace.json"),
     )
+    parser.add_argument(
+        "--pytorch-cpu-output", default=str(RESULTS_DIR / "pytorch_cpu.json")
+    )
+    parser.add_argument(
+        "--pytorch-cuda-output", default=str(RESULTS_DIR / "pytorch_cuda.json")
+    )
+    parser.add_argument("--onnx-cpu-output", default=str(RESULTS_DIR / "onnx_cpu.json"))
+    parser.add_argument(
+        "--onnx-cuda-output", default=str(RESULTS_DIR / "onnx_cuda.json")
+    )
+    parser.add_argument("--comparisons-dir", default=str(RESULTS_DIR / "comparisons"))
     parser.add_argument("--add-sizes", default="256,1024,4096,16384,65536")
     parser.add_argument("--matmul-sizes", default="64,128,256,512")
     parser.add_argument("--compiled-graph-sizes", default="64,128,256,512")
@@ -331,6 +404,7 @@ def main():
     parser.add_argument("--skip-tests", action="store_true")
     parser.add_argument("--skip-demo", action="store_true")
     parser.add_argument("--skip-bench", action="store_true")
+    parser.add_argument("--skip-baselines", action="store_true")
     parser.add_argument("--skip-plots", action="store_true")
     args = parser.parse_args()
 
@@ -399,6 +473,55 @@ def main():
     write_json(measured_output, measured_results)
     write_json(adaptive_cold_output, adaptive_cold_results)
     write_json(adaptive_output, adaptive_results)
+
+    comparisons_dir = Path(args.comparisons_dir)
+    if not args.skip_baselines:
+        if module_available("torch"):
+            pytorch_cpu_output = Path(args.pytorch_cpu_output)
+            pytorch_cuda_output = Path(args.pytorch_cuda_output)
+            run_baseline_script("pytorch_bench.py", "cpu", pytorch_cpu_output, config)
+            run_baseline_script("pytorch_bench.py", "cuda", pytorch_cuda_output, config)
+            write_text(
+                comparisons_dir / "pytorch_cpu_vs_runtime.txt",
+                compare_results(
+                    str(pytorch_cpu_output), str(cpu_output), "pytorch", "runtime"
+                ),
+            )
+            write_text(
+                comparisons_dir / "pytorch_cuda_vs_runtime.txt",
+                compare_results(
+                    str(pytorch_cuda_output), str(cuda_output), "pytorch", "runtime"
+                ),
+            )
+        else:
+            print("Skipping PyTorch baselines: torch is not installed.", flush=True)
+
+        if (
+            module_available("numpy")
+            and module_available("onnx")
+            and module_available("onnxruntime")
+        ):
+            onnx_cpu_output = Path(args.onnx_cpu_output)
+            onnx_cuda_output = Path(args.onnx_cuda_output)
+            run_baseline_script("onnx_bench.py", "cpu", onnx_cpu_output, config)
+            run_baseline_script("onnx_bench.py", "cuda", onnx_cuda_output, config)
+            write_text(
+                comparisons_dir / "onnx_cpu_vs_runtime.txt",
+                compare_results(
+                    str(onnx_cpu_output), str(cpu_output), "onnx", "runtime"
+                ),
+            )
+            write_text(
+                comparisons_dir / "onnx_cuda_vs_runtime.txt",
+                compare_results(
+                    str(onnx_cuda_output), str(cuda_output), "onnx", "runtime"
+                ),
+            )
+        else:
+            print(
+                "Skipping ONNX baselines: numpy, onnx, and onnxruntime are required.",
+                flush=True,
+            )
 
     if not args.skip_plots:
         run_plot_script(cpu_output, cuda_output, Path(args.plots_dir))
