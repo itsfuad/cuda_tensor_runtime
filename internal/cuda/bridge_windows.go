@@ -15,6 +15,8 @@ import (
 var (
 	loadOnce sync.Once
 	loadErr  error
+	callOnce sync.Once
+	callCh   chan dllCall
 
 	procAvailable *syscall.LazyProc
 	procMalloc    *syscall.LazyProc
@@ -27,6 +29,12 @@ var (
 	procLastError *syscall.LazyProc
 )
 
+type dllCall struct {
+	proc *syscall.LazyProc
+	args []uintptr
+	resp chan uintptr
+}
+
 func Available() bool {
 	if err := ensureLoaded(); err != nil {
 		return false
@@ -38,12 +46,16 @@ func MallocFloat32(count int) (unsafe.Pointer, error) {
 	if err := ensureLoaded(); err != nil {
 		return nil, err
 	}
-	var ptr uintptr
-	code := callInt(procMalloc, uintptr(unsafe.Pointer(&ptr)), uintptr(count*4))
+	ptr := new(uintptr)
+	var pinner runtime.Pinner
+	pinner.Pin(ptr)
+	defer pinner.Unpin()
+	code := callInt(procMalloc, uintptr(unsafe.Pointer(ptr)), uintptr(count*4))
+	runtime.KeepAlive(ptr)
 	if code != 0 {
 		return nil, errorFromCode("cuda malloc", code)
 	}
-	return unsafe.Pointer(ptr), nil
+	return unsafe.Pointer(*ptr), nil
 }
 
 func Free(ptr unsafe.Pointer) error {
@@ -64,7 +76,11 @@ func CopyFloat32HostToDevice(dst unsafe.Pointer, src []float32) error {
 	if len(src) == 0 {
 		return nil
 	}
+	var pinner runtime.Pinner
+	pinner.Pin(&src[0])
+	defer pinner.Unpin()
 	code := callInt(procCopyH2D, uintptr(dst), uintptr(unsafe.Pointer(&src[0])), uintptr(len(src)*4))
+	runtime.KeepAlive(src)
 	if code != 0 {
 		return errorFromCode("cuda memcpy h2d", code)
 	}
@@ -78,7 +94,11 @@ func CopyFloat32DeviceToHost(src unsafe.Pointer, dst []float32) error {
 	if len(dst) == 0 {
 		return nil
 	}
+	var pinner runtime.Pinner
+	pinner.Pin(&dst[0])
+	defer pinner.Unpin()
 	code := callInt(procCopyD2H, uintptr(unsafe.Pointer(&dst[0])), uintptr(src), uintptr(len(dst)*4))
+	runtime.KeepAlive(dst)
 	if code != 0 {
 		return errorFromCode("cuda memcpy d2h", code)
 	}
@@ -170,9 +190,28 @@ func cudaDLLPath() (string, error) {
 	return filepath.Join(rootDir, "cuda", "cudatensor.dll"), nil
 }
 
+func callProc(proc *syscall.LazyProc, args ...uintptr) uintptr {
+	callOnce.Do(func() {
+		callCh = make(chan dllCall)
+		go func() {
+			runtime.LockOSThread()
+			for call := range callCh {
+				r1, _, _ := call.proc.Call(call.args...)
+				call.resp <- r1
+			}
+		}()
+	})
+	resp := make(chan uintptr, 1)
+	callCh <- dllCall{
+		proc: proc,
+		args: append([]uintptr(nil), args...),
+		resp: resp,
+	}
+	return <-resp
+}
+
 func callInt(proc *syscall.LazyProc, args ...uintptr) int {
-	r1, _, _ := proc.Call(args...)
-	return int(r1)
+	return int(callProc(proc, args...))
 }
 
 func errorFromCode(op string, code int) error {
@@ -187,7 +226,7 @@ func lastErrorString() string {
 	if procLastError == nil {
 		return ""
 	}
-	ptr, _, _ := procLastError.Call()
+	ptr := callProc(procLastError)
 	if ptr == 0 {
 		return ""
 	}
