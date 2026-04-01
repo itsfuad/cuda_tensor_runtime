@@ -4,103 +4,103 @@
     "size": 256,
     "device": "cpu",
     "iterations": 5000,
-    "total_ms": 7.313300000532763,
-    "avg_ms": 0.0014626600001065525
+    "total_ms": 7.616900000357418,
+    "avg_ms": 0.0015233800000714836
   },
   {
     "name": "add",
     "size": 1024,
     "device": "cpu",
     "iterations": 5000,
-    "total_ms": 7.273899999745481,
-    "avg_ms": 0.0014547799999490962
+    "total_ms": 8.346699999492557,
+    "avg_ms": 0.0016693399998985114
   },
   {
     "name": "add",
     "size": 4096,
     "device": "cpu",
     "iterations": 5000,
-    "total_ms": 9.102799999709532,
-    "avg_ms": 0.0018205599999419064
+    "total_ms": 9.04030000037892,
+    "avg_ms": 0.001808060000075784
   },
   {
     "name": "add",
     "size": 16384,
     "device": "cpu",
     "iterations": 5000,
-    "total_ms": 13.307500000337313,
-    "avg_ms": 0.0026615000000674628
+    "total_ms": 13.627599999381346,
+    "avg_ms": 0.002725519999876269
   },
   {
     "name": "add",
     "size": 65536,
     "device": "cpu",
     "iterations": 5000,
-    "total_ms": 30.10649999941961,
-    "avg_ms": 0.006021299999883922
-  },
-  {
-    "name": "matmul",
-    "size": 64,
-    "device": "cpu",
-    "iterations": 50,
-    "total_ms": 0.41759999930945924,
-    "avg_ms": 0.008351999986189185
-  },
-  {
-    "name": "matmul",
-    "size": 128,
-    "device": "cpu",
-    "iterations": 50,
-    "total_ms": 0.7583000005979557,
-    "avg_ms": 0.015166000011959113
-  },
-  {
-    "name": "matmul",
-    "size": 256,
-    "device": "cpu",
-    "iterations": 50,
-    "total_ms": 2.8152000004411093,
-    "avg_ms": 0.056304000008822186
-  },
-  {
-    "name": "matmul",
-    "size": 512,
-    "device": "cpu",
-    "iterations": 50,
-    "total_ms": 24.220999999670312,
-    "avg_ms": 0.48441999999340624
+    "total_ms": 33.44000000015512,
+    "avg_ms": 0.006688000000031025
   },
   {
     "name": "compiled_graph",
     "size": 64,
     "device": "cpu",
     "iterations": 50,
-    "total_ms": 0.7537999999840395,
-    "avg_ms": 0.01507599999968079
+    "total_ms": 2.1621000005325186,
+    "avg_ms": 0.04324200001065037
   },
   {
     "name": "compiled_graph",
     "size": 128,
     "device": "cpu",
     "iterations": 50,
-    "total_ms": 0.8694999996805564,
-    "avg_ms": 0.017389999993611127
+    "total_ms": 0.9419000007255818,
+    "avg_ms": 0.018838000014511636
   },
   {
     "name": "compiled_graph",
     "size": 256,
     "device": "cpu",
     "iterations": 50,
-    "total_ms": 3.489599999738857,
-    "avg_ms": 0.06979199999477714
+    "total_ms": 2.7604000006249407,
+    "avg_ms": 0.055208000012498815
   },
   {
     "name": "compiled_graph",
     "size": 512,
     "device": "cpu",
     "iterations": 50,
-    "total_ms": 25.66430000024411,
-    "avg_ms": 0.5132860000048822
+    "total_ms": 25.488600000244332,
+    "avg_ms": 0.5097720000048866
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 1.4706000001751818,
+    "avg_ms": 0.029412000003503636
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.5365000006349874,
+    "avg_ms": 0.010730000012699747
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 2.678199999536446,
+    "avg_ms": 0.05356399999072892
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 23.21049999954994,
+    "avg_ms": 0.46420999999099877
   }
 ]

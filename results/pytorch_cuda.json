@@ -3,117 +3,104 @@
     "name": "add",
     "size": 256,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 5000,
-    "total_ms": 2738.5191,
-    "avg_ms": 0.54770382
+    "total_ms": 73.97779999973864,
+    "avg_ms": 0.014795559999947727
   },
   {
     "name": "add",
     "size": 1024,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 5000,
-    "total_ms": 2720.6704,
-    "avg_ms": 0.54413408
+    "total_ms": 67.56519999999,
+    "avg_ms": 0.013513039999998
   },
   {
     "name": "add",
     "size": 4096,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 5000,
-    "total_ms": 2700.1006,
-    "avg_ms": 0.54002012
+    "total_ms": 69.51299999946059,
+    "avg_ms": 0.013902599999892119
   },
   {
     "name": "add",
     "size": 16384,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 5000,
-    "total_ms": 2808.2695,
-    "avg_ms": 0.5616538999999999
+    "total_ms": 62.20179999945685,
+    "avg_ms": 0.012440359999891371
   },
   {
     "name": "add",
     "size": 65536,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 5000,
-    "total_ms": 3262.3143,
-    "avg_ms": 0.65246286
+    "total_ms": 66.4691000001767,
+    "avg_ms": 0.01329382000003534
   },
   {
     "name": "compiled_graph",
     "size": 64,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 129.8563,
-    "avg_ms": 2.5971260000000003
+    "total_ms": 69.4919999996273,
+    "avg_ms": 1.389839999992546
   },
   {
     "name": "compiled_graph",
     "size": 128,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 78.9085,
-    "avg_ms": 1.57817
+    "total_ms": 2.612500000395812,
+    "avg_ms": 0.05225000000791624
   },
   {
     "name": "compiled_graph",
     "size": 256,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 95.5233,
-    "avg_ms": 1.9104660000000002
+    "total_ms": 2.4974999996629776,
+    "avg_ms": 0.04994999999325955
   },
   {
     "name": "compiled_graph",
     "size": 512,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 172.4498,
-    "avg_ms": 3.448996
+    "total_ms": 3.2100999997055624,
+    "avg_ms": 0.06420199999411125
   },
   {
     "name": "matmul",
     "size": 64,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 83.8916,
-    "avg_ms": 1.677832
+    "total_ms": 54.99799999961397,
+    "avg_ms": 1.0999599999922793
   },
   {
     "name": "matmul",
     "size": 128,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 30.2721,
-    "avg_ms": 0.6054419999999999
+    "total_ms": 1.3022000002820278,
+    "avg_ms": 0.026044000005640555
   },
   {
     "name": "matmul",
     "size": 256,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 31.5376,
-    "avg_ms": 0.630752
+    "total_ms": 1.4167999997880543,
+    "avg_ms": 0.028335999995761085
   },
   {
     "name": "matmul",
     "size": 512,
     "device": "cuda",
-    "planner": "cuda",
     "iterations": 50,
-    "total_ms": 72.2009,
-    "avg_ms": 1.444018
+    "total_ms": 2.6842999996006256,
+    "avg_ms": 0.05368599999201251
   }
 ]

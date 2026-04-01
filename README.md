@@ -15,6 +15,16 @@ A small Go tensor runtime with a CUDA backend via cgo.
 - NumPy (`numpy`), ONNX (`onnx`), and ONNX Runtime (`onnxruntime`) for `scripts/onnx_bench.py`
 - cuDNN version compatible with your CUDA-enabled PyTorch and ONNX Runtime builds when running the CUDA Python benchmark helpers; this repo does not pin a cuDNN version
 
+## Python Environment
+
+Create a dedicated Conda environment and install the Python dependencies from the checked-in requirements file:
+
+```bash
+conda create -y -n cuda_tensor_runtime python=3.11 pip
+conda activate cuda_tensor_runtime
+python -m pip install -r requirements.txt
+```
+
 ## Implemented
 
 - float32 dense tensors

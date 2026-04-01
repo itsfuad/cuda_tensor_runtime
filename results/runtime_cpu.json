@@ -5,8 +5,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 5000,
-    "total_ms": 2.5653,
-    "avg_ms": 0.0005130600000000001
+    "total_ms": 2.6233,
+    "avg_ms": 0.00052466
   },
   {
     "name": "add",
@@ -14,8 +14,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 5000,
-    "total_ms": 6.7421,
-    "avg_ms": 0.00134842
+    "total_ms": 5.7041,
+    "avg_ms": 0.00114082
   },
   {
     "name": "add",
@@ -23,8 +23,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 5000,
-    "total_ms": 19.2268,
-    "avg_ms": 0.0038453600000000004
+    "total_ms": 22.3861,
+    "avg_ms": 0.00447722
   },
   {
     "name": "add",
@@ -32,8 +32,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 5000,
-    "total_ms": 76.6942,
-    "avg_ms": 0.01533884
+    "total_ms": 77.0891,
+    "avg_ms": 0.01541782
   },
   {
     "name": "add",
@@ -41,8 +41,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 5000,
-    "total_ms": 297.1328,
-    "avg_ms": 0.059426559999999996
+    "total_ms": 305.3694,
+    "avg_ms": 0.06107388
   },
   {
     "name": "compiled_graph",
@@ -50,8 +50,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 9.8553,
-    "avg_ms": 0.197106
+    "total_ms": 10.2765,
+    "avg_ms": 0.20553000000000002
   },
   {
     "name": "compiled_graph",
@@ -59,8 +59,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 64.9944,
-    "avg_ms": 1.299888
+    "total_ms": 63.6403,
+    "avg_ms": 1.272806
   },
   {
     "name": "compiled_graph",
@@ -68,8 +68,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 554.1971,
-    "avg_ms": 11.083942
+    "total_ms": 554.159,
+    "avg_ms": 11.08318
   },
   {
     "name": "compiled_graph",
@@ -77,8 +77,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 6230.5015,
-    "avg_ms": 124.61003000000001
+    "total_ms": 6433.6826,
+    "avg_ms": 128.673652
   },
   {
     "name": "matmul",
@@ -86,8 +86,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 8.2503,
-    "avg_ms": 0.16500599999999999
+    "total_ms": 8.2461,
+    "avg_ms": 0.164922
   },
   {
     "name": "matmul",
@@ -95,8 +95,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 64.2346,
-    "avg_ms": 1.284692
+    "total_ms": 64.9128,
+    "avg_ms": 1.298256
   },
   {
     "name": "matmul",
@@ -104,8 +104,8 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 530.0657,
-    "avg_ms": 10.601314
+    "total_ms": 523.3107,
+    "avg_ms": 10.466214
   },
   {
     "name": "matmul",
@@ -113,7 +113,7 @@
     "device": "hybrid",
     "planner": "threshold",
     "iterations": 50,
-    "total_ms": 5913.113,
-    "avg_ms": 118.26226000000001
+    "total_ms": 6112.3436,
+    "avg_ms": 122.246872
   }
 ]

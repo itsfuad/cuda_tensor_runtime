@@ -5,8 +5,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 0.5214,
-    "avg_ms": 0.010428
+    "total_ms": 1.0779,
+    "avg_ms": 0.021558
   },
   {
     "name": "add",
@@ -14,8 +14,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 1.0945,
-    "avg_ms": 0.02189
+    "total_ms": 1.0377,
+    "avg_ms": 0.020754
   },
   {
     "name": "add",
@@ -23,8 +23,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 1.0461,
-    "avg_ms": 0.020922
+    "total_ms": 1.0349,
+    "avg_ms": 0.020697999999999998
   },
   {
     "name": "add",
@@ -32,8 +32,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 2.0671,
-    "avg_ms": 0.041342
+    "total_ms": 2.0677,
+    "avg_ms": 0.041353999999999995
   },
   {
     "name": "add",
@@ -41,8 +41,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 4.1667,
-    "avg_ms": 0.08333399999999999
+    "total_ms": 4.1438,
+    "avg_ms": 0.08287599999999999
   },
   {
     "name": "compiled_graph",
@@ -50,8 +50,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 10.2953,
-    "avg_ms": 0.20590599999999998
+    "total_ms": 9.868,
+    "avg_ms": 0.19736
   },
   {
     "name": "compiled_graph",
@@ -59,8 +59,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 28.876,
-    "avg_ms": 0.57752
+    "total_ms": 29.7717,
+    "avg_ms": 0.595434
   },
   {
     "name": "compiled_graph",
@@ -68,8 +68,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 39.139,
-    "avg_ms": 0.78278
+    "total_ms": 39.7854,
+    "avg_ms": 0.7957080000000001
   },
   {
     "name": "compiled_graph",
@@ -77,8 +77,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 81.7132,
-    "avg_ms": 1.634264
+    "total_ms": 88.7322,
+    "avg_ms": 1.774644
   },
   {
     "name": "matmul",
@@ -86,8 +86,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 8.8501,
-    "avg_ms": 0.177002
+    "total_ms": 8.8274,
+    "avg_ms": 0.176548
   },
   {
     "name": "matmul",
@@ -95,8 +95,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 32.7797,
-    "avg_ms": 0.655594
+    "total_ms": 28.4051,
+    "avg_ms": 0.568102
   },
   {
     "name": "matmul",
@@ -104,8 +104,8 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 32.5838,
-    "avg_ms": 0.6516759999999999
+    "total_ms": 33.3461,
+    "avg_ms": 0.666922
   },
   {
     "name": "matmul",
@@ -113,7 +113,7 @@
     "device": "hybrid",
     "planner": "adaptive",
     "iterations": 50,
-    "total_ms": 60.5172,
-    "avg_ms": 1.210344
+    "total_ms": 63.5743,
+    "avg_ms": 1.2714860000000001
   }
 ]

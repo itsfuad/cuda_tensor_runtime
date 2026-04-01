@@ -1,0 +1,26 @@
+[
+  {
+    "name": "add",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 1,
+    "total_ms": 0.31099999978323467,
+    "avg_ms": 0.31099999978323467
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 1,
+    "total_ms": 0.13639999997394625,
+    "avg_ms": 0.13639999997394625
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 1,
+    "total_ms": 0.13719999969907803,
+    "avg_ms": 0.13719999969907803
+  }
+]

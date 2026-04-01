@@ -1,0 +1,14 @@
+workload         size     device   pytorch_avg_ms   runtime_avg_ms   speedup     
+add              256      cuda     0.015            0.548            0.027x      
+add              1024     cuda     0.014            0.544            0.025x      
+add              4096     cuda     0.014            0.540            0.026x      
+add              16384    cuda     0.012            0.562            0.022x      
+add              65536    cuda     0.013            0.652            0.020x      
+compiled_graph   64       cuda     1.390            2.597            0.535x      
+compiled_graph   128      cuda     0.052            1.578            0.033x      
+compiled_graph   256      cuda     0.050            1.910            0.026x      
+compiled_graph   512      cuda     0.064            3.449            0.019x      
+matmul           64       cuda     1.100            1.678            0.656x      
+matmul           128      cuda     0.026            0.605            0.043x      
+matmul           256      cuda     0.028            0.631            0.045x      
+matmul           512      cuda     0.054            1.444            0.037x      

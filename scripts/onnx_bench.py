@@ -88,10 +88,17 @@ def make_session(onnx, ort, workload, size, provider):
         producer_name="cuda_tensor_runtime_bench",
         opset_imports=[helper.make_operatorsetid("", 17)],
     )
-    return ort.InferenceSession(
+    session = ort.InferenceSession(
         model.SerializeToString(),
         providers=[provider],
     )
+    if provider == "CUDAExecutionProvider" and provider not in session.get_providers():
+        raise RuntimeError(
+            "CUDAExecutionProvider requested, but the session fell back to {}".format(
+                ", ".join(session.get_providers()) or "<none>"
+            )
+        )
+    return session
 
 
 def benchmark_workload(np, session, workload, size, device, iterations):
@@ -177,6 +184,7 @@ def main():
 
     provider = "CPUExecutionProvider"
     if args.device == "cuda":
+        ort.preload_dlls()
         provider = "CUDAExecutionProvider"
         available_providers = ort.get_available_providers()
         if provider not in available_providers:

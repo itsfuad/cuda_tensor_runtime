@@ -1,0 +1,26 @@
+[
+  {
+    "name": "add",
+    "size": 64,
+    "device": "cuda",
+    "iterations": 1,
+    "total_ms": 1644.1485999994256,
+    "avg_ms": 1644.1485999994256
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cuda",
+    "iterations": 1,
+    "total_ms": 46.42810000041209,
+    "avg_ms": 46.42810000041209
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "cuda",
+    "iterations": 1,
+    "total_ms": 352.2540999992998,
+    "avg_ms": 352.2540999992998
+  }
+]

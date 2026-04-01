@@ -1,0 +1,14 @@
+workload         size     device   onnx_avg_ms      runtime_avg_ms   speedup     
+add              256      cuda     6.372            0.548            11.634x     
+add              1024     cuda     0.070            0.544            0.129x      
+add              4096     cuda     0.089            0.540            0.164x      
+add              16384    cuda     0.104            0.562            0.184x      
+add              65536    cuda     0.148            0.652            0.227x      
+compiled_graph   64       cuda     1.182            2.597            0.455x      
+compiled_graph   128      cuda     0.166            1.578            0.105x      
+compiled_graph   256      cuda     0.201            1.910            0.105x      
+compiled_graph   512      cuda     0.385            3.449            0.112x      
+matmul           64       cuda     0.936            1.678            0.558x      
+matmul           128      cuda     0.151            0.605            0.250x      
+matmul           256      cuda     0.167            0.631            0.264x      
+matmul           512      cuda     0.337            1.444            0.233x      

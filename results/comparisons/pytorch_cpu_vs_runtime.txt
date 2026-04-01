@@ -1,0 +1,14 @@
+workload         size     device   pytorch_avg_ms   runtime_avg_ms   speedup     
+add              256      hybrid   0.002            0.001            2.904x      
+add              1024     hybrid   0.002            0.001            1.463x      
+add              4096     hybrid   0.002            0.004            0.404x      
+add              16384    hybrid   0.003            0.015            0.177x      
+add              65536    hybrid   0.007            0.061            0.110x      
+compiled_graph   64       hybrid   0.043            0.206            0.210x      
+compiled_graph   128      hybrid   0.019            1.273            0.015x      
+compiled_graph   256      hybrid   0.055            11.083           0.005x      
+compiled_graph   512      hybrid   0.510            128.674          0.004x      
+matmul           64       hybrid   0.029            0.165            0.178x      
+matmul           128      hybrid   0.011            1.298            0.008x      
+matmul           256      hybrid   0.054            10.466           0.005x      
+matmul           512      hybrid   0.464            122.247          0.004x      
