@@ -1,0 +1,106 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 7.313300000532763,
+    "avg_ms": 0.0014626600001065525
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 7.273899999745481,
+    "avg_ms": 0.0014547799999490962
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 9.102799999709532,
+    "avg_ms": 0.0018205599999419064
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 13.307500000337313,
+    "avg_ms": 0.0026615000000674628
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 30.10649999941961,
+    "avg_ms": 0.006021299999883922
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.41759999930945924,
+    "avg_ms": 0.008351999986189185
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.7583000005979557,
+    "avg_ms": 0.015166000011959113
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 2.8152000004411093,
+    "avg_ms": 0.056304000008822186
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 24.220999999670312,
+    "avg_ms": 0.48441999999340624
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.7537999999840395,
+    "avg_ms": 0.01507599999968079
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.8694999996805564,
+    "avg_ms": 0.017389999993611127
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 3.489599999738857,
+    "avg_ms": 0.06979199999477714
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 25.66430000024411,
+    "avg_ms": 0.5132860000048822
+  }
+]

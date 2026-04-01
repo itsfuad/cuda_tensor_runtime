@@ -123,7 +123,7 @@ On a CUDA machine, the preferred smoke path is:
 python scripts/gpu_smoke.py
 ```
 
-That runner builds the required CUDA artifact for the current platform, runs tagged tests, runs the demo, exports `results/runtime_cpu.json` and `results/runtime_cuda.json`, writes `results/runtime_metadata.json`, exports planner-comparison files, generates backend and planner plots, and, when PyTorch or ONNX Runtime are installed, also writes baseline JSON files plus comparison summaries under `results/comparisons/`.
+That runner builds the required CUDA artifact for the current platform, runs tagged tests, runs the demo, exports `results/runtime_cpu.json` and `results/runtime_cuda.json`, writes `results/runtime_metadata.json`, exports planner-comparison files, generates backend and planner plots, and, when PyTorch or ONNX Runtime are installed and their runners complete successfully, also writes baseline JSON files plus comparison summaries under `results/comparisons/`. If an external runner does not execute, `gpu_smoke.py` now prints an explicit reason instead of failing silently.
 
 ## Notes
 

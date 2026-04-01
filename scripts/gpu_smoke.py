@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 from datetime import datetime, timezone
+from importlib.util import find_spec
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -276,11 +277,18 @@ def run_plot_script(cpu_output, cuda_output, output_dir):
 
 
 def module_available(module_name):
-    try:
-        __import__(module_name)
-        return True
-    except Exception:
-        return False
+    return find_spec(module_name) is not None
+
+
+def process_error_message(err):
+    parts = []
+    if err.stderr and err.stderr.strip():
+        parts.append(err.stderr.strip())
+    if err.stdout and err.stdout.strip():
+        parts.append(err.stdout.strip())
+    if parts:
+        return "\n".join(parts)
+    return str(err)
 
 
 def run_baseline_script(script_name, device, output_path, config):
@@ -305,7 +313,7 @@ def run_baseline_script(script_name, device, output_path, config):
             "--iters",
             str(entry["iters"]),
         ]
-        run_checked(cmd)
+        run_checked(cmd, capture=True)
         with temp_output.open("r", encoding="utf-8") as handle:
             chunks.append(json.load(handle))
         temp_output.unlink(missing_ok=True)
@@ -330,6 +338,46 @@ def compare_results(base_path, candidate_path, base_name, candidate_name):
         capture=True,
     )
     return proc.stdout
+
+
+def run_baseline_with_notice(
+    *,
+    runner_name,
+    script_name,
+    device,
+    output_path,
+    config,
+    runtime_output,
+    comparisons_dir,
+):
+    try:
+        run_baseline_script(script_name, device, output_path, config)
+    except subprocess.CalledProcessError as err:
+        print(
+            f"{runner_name} runner did not run for device={device}: {process_error_message(err)}",
+            flush=True,
+        )
+        return False
+
+    try:
+        write_text(
+            comparisons_dir / f"{Path(output_path).stem}_vs_runtime.txt",
+            compare_results(
+                str(output_path), str(runtime_output), runner_name.lower(), "runtime"
+            ),
+        )
+    except subprocess.CalledProcessError as err:
+        print(
+            f"{runner_name} comparison did not run for device={device}: {process_error_message(err)}",
+            flush=True,
+        )
+        return False
+
+    print(
+        f"{runner_name} baseline completed for device={device}: wrote {output_path}",
+        flush=True,
+    )
+    return True
 
 
 def run_planner_plot_script(
@@ -475,51 +523,64 @@ def main():
     write_json(adaptive_output, adaptive_results)
 
     comparisons_dir = Path(args.comparisons_dir)
-    if not args.skip_baselines:
+    if args.skip_baselines:
+        print("Skipping external baselines: --skip-baselines was set.", flush=True)
+    else:
+        pytorch_cpu_output = Path(args.pytorch_cpu_output)
+        pytorch_cuda_output = Path(args.pytorch_cuda_output)
         if module_available("torch"):
-            pytorch_cpu_output = Path(args.pytorch_cpu_output)
-            pytorch_cuda_output = Path(args.pytorch_cuda_output)
-            run_baseline_script("pytorch_bench.py", "cpu", pytorch_cpu_output, config)
-            run_baseline_script("pytorch_bench.py", "cuda", pytorch_cuda_output, config)
-            write_text(
-                comparisons_dir / "pytorch_cpu_vs_runtime.txt",
-                compare_results(
-                    str(pytorch_cpu_output), str(cpu_output), "pytorch", "runtime"
-                ),
+            run_baseline_with_notice(
+                runner_name="PyTorch",
+                script_name="pytorch_bench.py",
+                device="cpu",
+                output_path=pytorch_cpu_output,
+                config=config,
+                runtime_output=cpu_output,
+                comparisons_dir=comparisons_dir,
             )
-            write_text(
-                comparisons_dir / "pytorch_cuda_vs_runtime.txt",
-                compare_results(
-                    str(pytorch_cuda_output), str(cuda_output), "pytorch", "runtime"
-                ),
+            run_baseline_with_notice(
+                runner_name="PyTorch",
+                script_name="pytorch_bench.py",
+                device="cuda",
+                output_path=pytorch_cuda_output,
+                config=config,
+                runtime_output=cuda_output,
+                comparisons_dir=comparisons_dir,
             )
         else:
-            print("Skipping PyTorch baselines: torch is not installed.", flush=True)
+            print(
+                f"PyTorch runner did not run: torch is not visible to {sys.executable}.",
+                flush=True,
+            )
 
+        onnx_cpu_output = Path(args.onnx_cpu_output)
+        onnx_cuda_output = Path(args.onnx_cuda_output)
         if (
             module_available("numpy")
             and module_available("onnx")
             and module_available("onnxruntime")
         ):
-            onnx_cpu_output = Path(args.onnx_cpu_output)
-            onnx_cuda_output = Path(args.onnx_cuda_output)
-            run_baseline_script("onnx_bench.py", "cpu", onnx_cpu_output, config)
-            run_baseline_script("onnx_bench.py", "cuda", onnx_cuda_output, config)
-            write_text(
-                comparisons_dir / "onnx_cpu_vs_runtime.txt",
-                compare_results(
-                    str(onnx_cpu_output), str(cpu_output), "onnx", "runtime"
-                ),
+            run_baseline_with_notice(
+                runner_name="ONNX",
+                script_name="onnx_bench.py",
+                device="cpu",
+                output_path=onnx_cpu_output,
+                config=config,
+                runtime_output=cpu_output,
+                comparisons_dir=comparisons_dir,
             )
-            write_text(
-                comparisons_dir / "onnx_cuda_vs_runtime.txt",
-                compare_results(
-                    str(onnx_cuda_output), str(cuda_output), "onnx", "runtime"
-                ),
+            run_baseline_with_notice(
+                runner_name="ONNX",
+                script_name="onnx_bench.py",
+                device="cuda",
+                output_path=onnx_cuda_output,
+                config=config,
+                runtime_output=cuda_output,
+                comparisons_dir=comparisons_dir,
             )
         else:
             print(
-                "Skipping ONNX baselines: numpy, onnx, and onnxruntime are required.",
+                f"ONNX runner did not run: numpy, onnx, and onnxruntime are not all visible to {sys.executable}.",
                 flush=True,
             )
 

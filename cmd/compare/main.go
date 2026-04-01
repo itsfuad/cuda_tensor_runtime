@@ -62,15 +62,21 @@ func main() {
 
 func compare(baseResults, candidateResults []benchfmt.Result) ([]comparisonRow, error) {
 	baseIndex := make(map[string]benchfmt.Result, len(baseResults))
+	baseByNameSize := make(map[string][]benchfmt.Result, len(baseResults))
 	for _, result := range baseResults {
 		baseIndex[key(result)] = result
+		baseByNameSize[nameSizeKey(result)] = append(baseByNameSize[nameSizeKey(result)], result)
 	}
 
 	rows := make([]comparisonRow, 0, len(candidateResults))
 	for _, result := range candidateResults {
 		base, ok := baseIndex[key(result)]
 		if !ok {
-			return nil, fmt.Errorf("missing baseline result for workload=%s size=%d device=%s", result.Name, result.Size, result.Device)
+			candidates := baseByNameSize[nameSizeKey(result)]
+			if len(candidates) != 1 {
+				return nil, fmt.Errorf("missing baseline result for workload=%s size=%d device=%s", result.Name, result.Size, result.Device)
+			}
+			base = candidates[0]
 		}
 		speedup := math.NaN()
 		if result.AvgMs != 0 {
@@ -100,6 +106,10 @@ func compare(baseResults, candidateResults []benchfmt.Result) ([]comparisonRow, 
 
 func key(result benchfmt.Result) string {
 	return fmt.Sprintf("%s|%d|%s", result.Name, result.Size, result.Device)
+}
+
+func nameSizeKey(result benchfmt.Result) string {
+	return fmt.Sprintf("%s|%d", result.Name, result.Size)
 }
 
 func printText(rows []comparisonRow, baseName, candidateName string) {

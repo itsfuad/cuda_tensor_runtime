@@ -1,0 +1,106 @@
+[
+  {
+    "name": "add",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 43.855599999915285,
+    "avg_ms": 0.008771119999983057
+  },
+  {
+    "name": "add",
+    "size": 1024,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 38.589100000535836,
+    "avg_ms": 0.007717820000107167
+  },
+  {
+    "name": "add",
+    "size": 4096,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 40.37770000013552,
+    "avg_ms": 0.008075540000027104
+  },
+  {
+    "name": "add",
+    "size": 16384,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 49.31320000014239,
+    "avg_ms": 0.009862640000028478
+  },
+  {
+    "name": "add",
+    "size": 65536,
+    "device": "cpu",
+    "iterations": 5000,
+    "total_ms": 84.12799999950948,
+    "avg_ms": 0.016825599999901898
+  },
+  {
+    "name": "compiled_graph",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 1.068400000804104,
+    "avg_ms": 0.021368000016082078
+  },
+  {
+    "name": "compiled_graph",
+    "size": 128,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 1.4639999999417341,
+    "avg_ms": 0.029279999998834683
+  },
+  {
+    "name": "compiled_graph",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 5.1277000002301065,
+    "avg_ms": 0.10255400000460213
+  },
+  {
+    "name": "compiled_graph",
+    "size": 512,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 26.38920000026701,
+    "avg_ms": 0.5277840000053402
+  },
+  {
+    "name": "matmul",
+    "size": 64,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 0.9632000001147389,
+    "avg_ms": 0.01926400000229478
+  },
+  {
+    "name": "matmul",
+    "size": 128,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 1.1561999999685213,
+    "avg_ms": 0.023123999999370426
+  },
+  {
+    "name": "matmul",
+    "size": 256,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 3.934800000024552,
+    "avg_ms": 0.07869600000049104
+  },
+  {
+    "name": "matmul",
+    "size": 512,
+    "device": "cpu",
+    "iterations": 50,
+    "total_ms": 21.712400000069465,
+    "avg_ms": 0.4342480000013893
+  }
+]

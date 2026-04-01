@@ -14,6 +14,20 @@ def parse_sizes(raw):
     return [int(item) for item in parse_csv(raw)]
 
 
+def workload_config(args):
+    return {
+        "add": {"sizes": parse_sizes(args.add_sizes), "iters": args.add_iters},
+        "matmul": {
+            "sizes": parse_sizes(args.matmul_sizes),
+            "iters": args.matmul_iters,
+        },
+        "compiled_graph": {
+            "sizes": parse_sizes(args.compiled_graph_sizes),
+            "iters": args.compiled_graph_iters,
+        },
+    }
+
+
 def tensor_data(size):
     total = 1
     for dim in size:
@@ -47,7 +61,9 @@ def make_session(onnx, ort, workload, size, provider):
             helper.make_tensor_value_info("a", TensorProto.FLOAT, [size, size]),
             helper.make_tensor_value_info("b", TensorProto.FLOAT, [size, size]),
         ]
-        outputs = [helper.make_tensor_value_info("out", TensorProto.FLOAT, [size, size])]
+        outputs = [
+            helper.make_tensor_value_info("out", TensorProto.FLOAT, [size, size])
+        ]
         nodes = [helper.make_node("MatMul", ["a", "b"], ["out"])]
     elif workload == "compiled_graph":
         inputs = [
@@ -55,7 +71,9 @@ def make_session(onnx, ort, workload, size, provider):
             helper.make_tensor_value_info("w", TensorProto.FLOAT, [size, size]),
             helper.make_tensor_value_info("bias", TensorProto.FLOAT, [size, size]),
         ]
-        outputs = [helper.make_tensor_value_info("out", TensorProto.FLOAT, [size, size])]
+        outputs = [
+            helper.make_tensor_value_info("out", TensorProto.FLOAT, [size, size])
+        ]
         nodes = [
             helper.make_node("MatMul", ["x", "w"], ["mm"]),
             helper.make_node("Add", ["mm", "bias"], ["sum"]),
@@ -65,7 +83,11 @@ def make_session(onnx, ort, workload, size, provider):
         raise ValueError(f"unsupported workload: {workload}")
 
     graph = helper.make_graph(nodes, f"{workload}_graph", inputs, outputs)
-    model = helper.make_model(graph, producer_name="cuda_tensor_runtime_bench")
+    model = helper.make_model(
+        graph,
+        producer_name="cuda_tensor_runtime_bench",
+        opset_imports=[helper.make_operatorsetid("", 17)],
+    )
     return ort.InferenceSession(
         model.SerializeToString(),
         providers=[provider],
@@ -80,14 +102,24 @@ def benchmark_workload(np, session, workload, size, device, iterations):
         }
     elif workload == "matmul":
         feeds = {
-            "a": np.array(tensor_data([size, size]), dtype=np.float32).reshape(size, size),
-            "b": np.array(tensor_data([size, size]), dtype=np.float32).reshape(size, size),
+            "a": np.array(tensor_data([size, size]), dtype=np.float32).reshape(
+                size, size
+            ),
+            "b": np.array(tensor_data([size, size]), dtype=np.float32).reshape(
+                size, size
+            ),
         }
     else:
         feeds = {
-            "x": np.array(tensor_data([size, size]), dtype=np.float32).reshape(size, size),
-            "w": np.array(tensor_data([size, size]), dtype=np.float32).reshape(size, size),
-            "bias": np.array(tensor_data([size, size]), dtype=np.float32).reshape(size, size),
+            "x": np.array(tensor_data([size, size]), dtype=np.float32).reshape(
+                size, size
+            ),
+            "w": np.array(tensor_data([size, size]), dtype=np.float32).reshape(
+                size, size
+            ),
+            "bias": np.array(tensor_data([size, size]), dtype=np.float32).reshape(
+                size, size
+            ),
         }
 
     start = time.perf_counter()
@@ -98,15 +130,38 @@ def benchmark_workload(np, session, workload, size, device, iterations):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Emit ONNX Runtime benchmark results in the runtime JSON schema.")
+    parser = argparse.ArgumentParser(
+        description="Emit ONNX Runtime benchmark results in the runtime JSON schema."
+    )
     parser.add_argument("--workloads", default="add,matmul,compiled_graph")
     parser.add_argument("--sizes", default="64,128,256")
     parser.add_argument("--iters", type=int, default=20)
+    parser.add_argument("--add-sizes", default="")
+    parser.add_argument("--matmul-sizes", default="")
+    parser.add_argument("--compiled-graph-sizes", default="")
+    parser.add_argument("--add-iters", type=int, default=0)
+    parser.add_argument("--matmul-iters", type=int, default=0)
+    parser.add_argument("--compiled-graph-iters", type=int, default=0)
     parser.add_argument("--device", default="cpu", choices=["cpu", "cuda"])
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
-    missing = [name for name in ("numpy", "onnx", "onnxruntime") if find_spec(name) is None]
+    if not args.add_sizes:
+        args.add_sizes = args.sizes
+    if not args.matmul_sizes:
+        args.matmul_sizes = args.sizes
+    if not args.compiled_graph_sizes:
+        args.compiled_graph_sizes = args.sizes
+    if args.add_iters <= 0:
+        args.add_iters = args.iters
+    if args.matmul_iters <= 0:
+        args.matmul_iters = args.iters
+    if args.compiled_graph_iters <= 0:
+        args.compiled_graph_iters = args.iters
+
+    missing = [
+        name for name in ("numpy", "onnx", "onnxruntime") if find_spec(name) is None
+    ]
     if missing:
         print(
             "Missing required Python packages: {}. Install them in the active environment first.".format(
@@ -138,12 +193,24 @@ def main():
         sys.exit(1)
 
     workloads = parse_csv(args.workloads)
-    sizes = parse_sizes(args.sizes)
+    config = workload_config(args)
+    for workload, entry in config.items():
+        if entry["iters"] <= 0:
+            print(f"{workload} iterations must be > 0", file=sys.stderr)
+            sys.exit(1)
     results = []
     for workload in workloads:
-        for size in sizes:
+        entry = config.get(workload)
+        if entry is None:
+            print(f"unsupported workload: {workload}", file=sys.stderr)
+            sys.exit(1)
+        for size in entry["sizes"]:
             session = make_session(onnx, ort, workload, size, provider)
-            results.append(benchmark_workload(np, session, workload, size, args.device, args.iters))
+            results.append(
+                benchmark_workload(
+                    np, session, workload, size, args.device, entry["iters"]
+                )
+            )
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)

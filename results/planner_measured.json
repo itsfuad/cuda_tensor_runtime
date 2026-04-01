@@ -5,8 +5,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 5000,
-    "total_ms": 60.119,
-    "avg_ms": 0.0120238
+    "total_ms": 64.748,
+    "avg_ms": 0.0129496
   },
   {
     "name": "add",
@@ -14,8 +14,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 5000,
-    "total_ms": 63.2887,
-    "avg_ms": 0.012657739999999999
+    "total_ms": 66.7577,
+    "avg_ms": 0.01335154
   },
   {
     "name": "add",
@@ -23,8 +23,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 5000,
-    "total_ms": 80.3637,
-    "avg_ms": 0.01607274
+    "total_ms": 85.8396,
+    "avg_ms": 0.01716792
   },
   {
     "name": "add",
@@ -32,8 +32,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 5000,
-    "total_ms": 133.5965,
-    "avg_ms": 0.026719299999999998
+    "total_ms": 139.8366,
+    "avg_ms": 0.02796732
   },
   {
     "name": "add",
@@ -41,8 +41,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 5000,
-    "total_ms": 369.3277,
-    "avg_ms": 0.07386554
+    "total_ms": 371.6452,
+    "avg_ms": 0.07432904
   },
   {
     "name": "compiled_graph",
@@ -50,8 +50,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 113.3756,
-    "avg_ms": 2.267512
+    "total_ms": 110.06,
+    "avg_ms": 2.2012
   },
   {
     "name": "compiled_graph",
@@ -59,8 +59,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 74.2118,
-    "avg_ms": 1.4842359999999999
+    "total_ms": 73.9205,
+    "avg_ms": 1.47841
   },
   {
     "name": "compiled_graph",
@@ -68,8 +68,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 94.0159,
-    "avg_ms": 1.880318
+    "total_ms": 91.7865,
+    "avg_ms": 1.83573
   },
   {
     "name": "compiled_graph",
@@ -77,8 +77,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 161.0283,
-    "avg_ms": 3.220566
+    "total_ms": 173.185,
+    "avg_ms": 3.4637000000000002
   },
   {
     "name": "matmul",
@@ -86,8 +86,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 8.7799,
-    "avg_ms": 0.175598
+    "total_ms": 8.7786,
+    "avg_ms": 0.175572
   },
   {
     "name": "matmul",
@@ -95,8 +95,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 96.1442,
-    "avg_ms": 1.922884
+    "total_ms": 78.1746,
+    "avg_ms": 1.5634919999999999
   },
   {
     "name": "matmul",
@@ -104,8 +104,8 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 29.7225,
-    "avg_ms": 0.59445
+    "total_ms": 39.6717,
+    "avg_ms": 0.793434
   },
   {
     "name": "matmul",
@@ -113,7 +113,7 @@
     "device": "hybrid",
     "planner": "measured",
     "iterations": 50,
-    "total_ms": 62.1983,
-    "avg_ms": 1.2439660000000001
+    "total_ms": 68.5526,
+    "avg_ms": 1.371052
   }
 ]
